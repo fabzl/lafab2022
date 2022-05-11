@@ -44,14 +44,19 @@ class Grid extends Component {
 
   render() {
     const Wrap = styled.div`
-      display: grid;
-      grid-template-columns: ${this.setfullWidth() ? "1fr" : "2fr 2fr"};
-      grid-auto-rows: 43rem;
+    
+    padding: 2vw;
+    column-gap: 2vw;
+    row-gap: 2vw;
+    display: grid;
+    align-self:center;
+    grid-template-columns: ${this.setfullWidth() ? "1fr 1fr 1fr" : "1fr 1fr 1fr"};
+      
       & div:last-child:nth-child(odd) {
-        grid-column: 1 / 3;
+        grid-column: 1 / 5;
       }
       &.full {
-        grid-column: 1 / 3;
+        grid-column: 1 / 5;
       }
     `;
 

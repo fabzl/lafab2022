@@ -9,7 +9,10 @@ const Wrap = styled.div`
   position: relative;
   overflow: hidden;
   background: url(${props => props.src}) no-repeat center;
-  background-size: cover;
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;              /* optional, center the image */
+
 
   &:hover {
     > a > div {
@@ -27,12 +30,11 @@ const Wrap = styled.div`
 
 const Content = styled.div`
   position: absolute;
-  top: 0;
+  top:0;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 2remm;
-  background: rgba(68, 48, 79, 0.6);
+  background: rgba(255, 148, 79, 0.6);
   opacity: 0;
   transition: opacity 0.3s;
   text-align: center;
@@ -51,7 +53,7 @@ const Content = styled.div`
   }
 
   h3 {
-    font-size: 4.2rem;
+    font-size: 1.2rem;
     font-weight: 700;
     font-style: italic;
     text-transform: uppercase;
@@ -76,13 +78,14 @@ const Middle = styled.div`
   right: 0;
   transform: none;
   margin-top: -3em;
+  background-color: #000000;  
 `;
 
 const LinkTo = styled(Link)`
   color: ${colors.white};
   text-decoration: none;
   display: block;
-  height: 100vh;
+  height: 25vw;
 `;
 
 const Category = styled.p`

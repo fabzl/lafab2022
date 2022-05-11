@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { keyframes } from "styled-components";
 
 export const colors = {
-  black: "#000000",
+  black: "#20232A",
   gray: "#282c34",
   white: "#FFF",
   violet: "#daa520",
@@ -28,10 +28,13 @@ export const Rotate = styled.div`
 
 // keyframes returns a unique name based on a hash of the contents of the keyframes
 export const colorsBGanimation = keyframes`
-  0%   {background: ${colors.white}}
-  25%  {background: ${colors.violet}}
-  50%  {background: ${colors.orange}}
-  100% {background: ${colors.white}}
+  0%  {background: ${colors.violet}}
+  100%  {background: ${colors.orange}}
+`;
+
+// keyframes returns a unique name based on a hash of the contents of the keyframes
+export const hueAnimation = keyframes`
+  100%  {filter: hue-rotate(360deg)}
 `;
 
 // keyframes returns a unique name based on a hash of the contents of the keyframes

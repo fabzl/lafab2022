@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../img/logo_loader.svg";
 import { colors, slideOut, colorsBGanimation } from "../styles/globals";
-import { growOld } from "../styles/globals";
+import { hueAnimation } from "../styles/globals";
 import { connect } from "react-redux";
 
 const Loader = props => {
@@ -14,8 +14,8 @@ const Loader = props => {
     z-index: 999999;
     display: "none";
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 100vw;
     height: 100vh;
     background: ${colors.white};
@@ -26,18 +26,19 @@ const Loader = props => {
 
     img {
       width: 100%;
-      height: auto;
+      height: 100vh;
       cursor: pointer;
-      grid-column:4 /4;
-      grid-row:2/2;
+      grid-column:1 /1;
+      grid-row:1/1;
       flex-grow: 2;
       display: flex;
       align-self: center;
-      animation: ${growOld};
+      animation: ${hueAnimation};
       animation-duration: 3000ms;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       animation-direction: alternate-reverse;
+
     }
   `;
   return (
