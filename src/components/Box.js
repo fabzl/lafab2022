@@ -6,62 +6,51 @@ import { Link } from "react-router-dom";
 import { colors } from "../styles/globals";
 
 const Wrap = styled.div`
+
+
+
   position: relative;
-  overflow: hidden;
-  background: url(${props => props.src}) no-repeat center;
-  background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
-  background-position: center center;              /* optional, center the image */
-
-
   &:hover {
     > a > div {
       opacity: 1;
       h4 {
         opacity: 1;
-        transform: translateX(0);
+      
       }
       h3 {
-        transform: translateX(0);
+
       }
     }
   }
 `;
 
+
 const Content = styled.div`
-  position: absolute;
-  top:0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(255, 148, 79, 0.6);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s;
-  text-align: center;
-  user-select: none;
-  opacity: 0;
+  text-align: left;
   color: ${colors.white};
 
   h4 {
-    margin: 0 0 1rem;
-    font-size: 2.1rem;
+  
+    font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
     font-style: italic;
-    opacity: 0;
-    transform: translateX(-20rem);
+    opacity: 1;
+    margin: 5px 0 0 -3px;
+  
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-style: italic;
     text-transform: uppercase;
     color: ${colors.red};
-    padding: 0.33rem 1rem 0.5rem;
-    margin: 0;
+    margin: 2px 0 0 -3px;
     line-height: 1em;
-    transform: translateX(20rem);
+   
   }
 
   h3,
@@ -71,14 +60,25 @@ const Content = styled.div`
   }
 `;
 
-const Middle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
+const TextHolder = styled.div`
+  position: relative;
   transform: none;
-  margin-top: -3em;
-  background-color: #000000;  
+  border-top: 4px solid white;
+  margin-top: 10px;
+  text-align:left;
+`;
+
+const ImageHolder = styled.div`
+height:300px;
+position: relative;
+overflow: hidden;
+background: url(${props => props.src}) no-repeat center;
+background-size:     cover;                      /* <------ */
+background-repeat:   no-repeat;
+background-position: center center;              /* optional, center the image */
+  .wide {
+    transform: rotaition(180deg);
+  } 
 `;
 
 const LinkTo = styled(Link)`
@@ -86,18 +86,6 @@ const LinkTo = styled(Link)`
   text-decoration: none;
   display: block;
   height: 25vw;
-`;
-
-const Category = styled.p`
-  color: ${colors.white};
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: ${colors.black};
-  padding:0 10px;
-  text-transform:uppercase;
-  font-size: 1.3rem;
-  font-weight: 700;
 `;
 
 class Box extends Component {
@@ -110,17 +98,17 @@ class Box extends Component {
 
   render() {
     return (
-      <Wrap src={this.props.image}>
-        <Category>{this.props.category} </Category>
+      <Wrap className={this.props.boxtype} >
         <LinkTo
           to={this.props.link ? `/work/${this.props.link}` : "/"}
           onClick={this.handleLink}
         >
           <Content>
-            <Middle>
-              <h4>{this.props.client}</h4>
-              <h3>{this.props.title}</h3>
-            </Middle>
+           <ImageHolder src={this.props.image}/>
+            <TextHolder>
+              <h4>{this.props.title}   {(!this.props.client)? null : " - " } {this.props.client}</h4>
+              <h3>{this.props.category}  {(!this.props.country)? null : " - " } {this.props.country}</h3>
+            </TextHolder>
           </Content>
         </LinkTo>
       </Wrap>

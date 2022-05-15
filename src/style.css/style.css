@@ -92,6 +92,7 @@
  * See http://modularscale.com for
  *
  */
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
 html {
   font-size: 18px;
   -webkit-text-size-adjust: 100%; }
@@ -1182,7 +1183,10 @@ pre {
  */
 body {
   background-color: #f1f1f1;
-  margin: 0 auto; }
+  margin: 0 auto;
+  color: #daa520;
+  padding-left: 1rem;
+  font-family: MuseoModerno,cursive; }
 
 /**
  * Default layout container

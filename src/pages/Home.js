@@ -6,6 +6,18 @@ import VideoHome from "../components/VideoHome";
 import Grid from "../components/Grid";
 import translations from "../translations";
 import { colors } from "../styles/globals";
+import Main from "../components/Main";
+
+
+
+const TitleHolder = styled.h2`
+  color: ${colors.white}
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:3px;
+`;
+
+
 
 const AllWork = styled.div`
   padding: 0;
@@ -40,6 +52,7 @@ const LinkTo = styled(Link)`
 
 const Home = props => (
   <div>
+    <Main></Main>
     <VideoHome
       video={props.dataHome.videos}
       title={
@@ -48,6 +61,9 @@ const Home = props => (
           : props.dataHome.intro_text_english
       }
     />
+    <TitleHolder>
+         {props.language === "es" ? "Proyectos" : "Projects"}
+    </TitleHolder>
     <Grid data={props.data} language={props.language} />
     <AllWork>
       <H3>

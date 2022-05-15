@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
+
+
 /**
  * Global app/site styles
  * =================================
  */
+
+
 body {
 	background-color: $color-bg;
 	margin: 0 auto;
-
+  color: #daa520;
+  padding-left: 1rem;
 }
 
 /**
