@@ -11,11 +11,12 @@ const H2 = styled.div`
   user-select: none;
   text-align: center;
   color: ${colors.white};
-  border: 1px solid ${colors.white};
+  border: 2px solid ${colors.white};
   padding: 0.5rem;
-  padding-top: 0.8rem;
+  font-size: 0.5rem;
   margin-right: 5rem;
   transition: 0.7s all;
+  border-radius: 100%;
   @media (max-width: 740px) {
     position: fixed;
     top: 2rem;
@@ -24,7 +25,7 @@ const H2 = styled.div`
   &:hover {
     background-color: ${colors.white};
     color: ${colors.black};
-    border: none;
+    border: 2px solid ${colors.white};
   }
   &:both {
     border-top: none;

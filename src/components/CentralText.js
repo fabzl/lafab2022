@@ -52,7 +52,7 @@ min-height: 80vh;
 
 
 
-const Main = props => {
+const CentralText = props => {
 
   return (
     <div>
@@ -72,6 +72,6 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps)(CentralText);
 
 

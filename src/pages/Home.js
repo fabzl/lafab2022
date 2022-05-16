@@ -62,7 +62,7 @@ const Home = props => (
       }
     />
     <TitleHolder>
-         {props.language === "es" ? "Proyectos" : "Projects"}
+         {props.language === "es" ? "Ultimos Proyectos" : "Latest Projects"}
     </TitleHolder>
     <Grid data={props.data} language={props.language} />
     <AllWork>

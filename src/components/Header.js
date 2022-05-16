@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 
 import translations from "../translations";
-import logo from "../img/logo_main_white.svg";
+//import logo from "../img/logo_main_white.svg";
 
 import { colors } from "../styles/globals";
 
@@ -58,7 +58,7 @@ const LinkTo = styled(NavLink)`
   }
 `;
 
-const LogoContainer = styled.div`
+/* const LogoContainer = styled.div`
   margin-right: auto;
   margin-left: 2rem;
   margin-top: 1.5rem;
@@ -76,7 +76,7 @@ const Logo = styled.img`
     min-width: 3rem;
   }
 `;
-
+ */
 const Burger = () => (
   <svg width="30px" height="30px" fill={colors.white}>
     <rect y="7px" width="30px" height="2px" />
@@ -158,13 +158,17 @@ const BurgerLink = styled.a`
 
 const NavContainer = styled.div`
   align-items: center;
-  justify-content: flex-end;
+  width: 100%;
+  justify-content: space-around;
   z-index: 900;
   flex-direction: row;
   display: flex;
+  padding-top: 10px;
 
   @media (max-width: 740px) {
     display: none;
+    justify-content: flex-end;
+
     &.active {
       display: flex;
       top: 0;
@@ -205,11 +209,11 @@ class Header extends React.Component {
     const { language } = this.props;
     return (
       <Nav>
-        <LogoContainer>
+  {/*       <LogoContainer>
           <Link to="/">
             <Logo src={logo} />
           </Link>
-        </LogoContainer>
+        </LogoContainer> */}
 
         <NavContainer className={this.state.openMenu && "active"}>
           <LinkTo onClick={this.checkMobileNav} to="/">
@@ -226,6 +230,14 @@ class Header extends React.Component {
 
           <LinkTo onClick={this.checkMobileNav} to="/contact">
             {translations.header.contact[language]}
+          </LinkTo>
+
+          <LinkTo onClick={this.checkMobileNav} to="/services">
+            {translations.header.services[language]}
+          </LinkTo>
+
+          <LinkTo onClick={this.checkMobileNav} to="/shop">
+            {translations.header.shop[language]}
           </LinkTo>
 
           <Social header />
