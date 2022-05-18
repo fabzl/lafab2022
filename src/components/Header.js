@@ -27,15 +27,15 @@ const Nav = styled.nav`
 `;
 
 const LinkTo = styled(NavLink)`
+  position: relative;
   text-indent: 0;
   color: ${colors.white};
   text-decoration: none;
   display: inline-block;
   font-size: 1.1rem;
   margin: 0 2rem;
-  font-family: "ZonaPro-Bold";
   align-items: center;
-  line-height: 1rem;
+  line-height: 2rem;
   text-transform: uppercase;
   transition: 1s all;
   background: transparent;
@@ -54,8 +54,31 @@ const LinkTo = styled(NavLink)`
   }
   &.active,
   &:hover {
-    color: ${colors.white};
+    color: 000000;
   }
+
+  &:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  &::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #FFF;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+
+
+  
 `;
 
 /* const LogoContainer = styled.div`

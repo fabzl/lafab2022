@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Logo from "../img/logo_white_simple.svg";
 import Garden from "../img/image-garden-dark.jpg";
 //import translations from "../translations";
-const { language, data } = this.props;
+//const { language, data } = this.props;
 
 //import { colors } from "../styles/globals";
 const InTouch = styled.div`

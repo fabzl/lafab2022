@@ -52,16 +52,16 @@ class Grid extends Component {
     row-gap: 2vw;
     display: grid;
     align-self:center;
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns:  1fr;
 
     @media screen and (max-width: 576px) {
       grid-template-columns:  1fr 1fr;
     }
     @media screen and (min-width: 1400px) {
-      grid-template-columns:  1fr 1fr 1fr 1fr;
+      grid-template-columns:  1fr 1fr;
     }
     @media screen and (min-width: 1700px) {
-      grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns:  1fr 1fr;
     }
     `;
 

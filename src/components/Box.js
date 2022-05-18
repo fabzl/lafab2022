@@ -8,7 +8,7 @@ import { colors } from "../styles/globals";
 const Wrap = styled.div`
 
 
-
+  
   position: relative;
   &:hover {
     > a > div {
@@ -69,7 +69,8 @@ const TextHolder = styled.div`
 `;
 
 const ImageHolder = styled.div`
-height:300px;
+width: 480px;
+height: 270px;
 position: relative;
 overflow: hidden;
 background: url(${props => props.src}) no-repeat center;
@@ -85,7 +86,6 @@ const LinkTo = styled(Link)`
   color: ${colors.white};
   text-decoration: none;
   display: block;
-  height: 25vw;
 `;
 
 class Box extends Component {

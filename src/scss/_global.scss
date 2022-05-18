@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 
 
 /**
@@ -70,7 +69,6 @@ $color-line-5:#8100FF;
   font-size:7vw;
   .title-part{
     font-weight: 600;
-    font-family:'Fredoka One', sans-serif;
     text-transform:uppercase;
     display:block;
     color:$color-title;
@@ -101,7 +99,6 @@ $color-line-5:#8100FF;
 
 	-moz-osx-font-smoothing: grayscale;
 
-	font-smoothing: antialiased;
 
 	.is-android &
 	{
@@ -112,7 +109,5 @@ $color-line-5:#8100FF;
 		-webkit-font-smoothing: auto;
 
 		-moz-osx-font-smoothing: auto;
-
-		font-smoothing: auto;
 	}
 }

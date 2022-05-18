@@ -77,22 +77,7 @@
  * Typography styles
  * See https://trykickoff.com/demos/typography.html for more info
  */
-/**
- * Typography
- * =================================
- * - Base
- * - Paragraphs
- * - Headings
- * - Type sizes
- * - Misc
- * - Utilities
- *
- * Body font size, leadings etc have been set in _variables.scss
- *
- * See http://modularscale.com for
- *
- */
-@import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,600&family=Red+Hat+Display:wght@300&family=Source+Serif+Pro:wght@200&display=swap");
 html {
   font-size: 18px;
   -webkit-text-size-adjust: 100%; }
@@ -101,6 +86,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.4;
   color: #444;
+  font-family: 'Red Hat Display', sans-serif;
   font-feature-settings: "liga", "dlig", "hist";
   font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
   -webkit-font-smoothing: antialiased;
@@ -111,7 +97,6 @@ body {
  * Paragraphs
  */
 p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   margin-top: 0;
   margin-bottom: 28px; }
 
@@ -130,7 +115,8 @@ h6 {
   line-height: 1.1;
   text-rendering: optimizelegibility;
   margin-top: 0;
-  margin-bottom: 28px; }
+  margin-bottom: 28px;
+  font-family: 'Cormorant Garamond', serif; }
   h1 small,
   h2 small,
   h3 small,
@@ -1185,8 +1171,7 @@ body {
   background-color: #f1f1f1;
   margin: 0 auto;
   color: #daa520;
-  padding-left: 1rem;
-  font-family: MuseoModerno,cursive; }
+  padding-left: 1rem; }
 
 /**
  * Default layout container
@@ -1204,7 +1189,6 @@ body {
   font-size: 7vw; }
   .title .title-part {
     font-weight: 600;
-    font-family: 'Fredoka One', sans-serif;
     text-transform: uppercase;
     display: block;
     color: #FFFFD9; }
@@ -1222,13 +1206,11 @@ body {
 .font-smooth {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased; }
+  -moz-osx-font-smoothing: grayscale; }
   .is-android .font-smooth {
     text-rendering: auto;
     -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
-    font-smoothing: auto; }
+    -moz-osx-font-smoothing: auto; }
 
 /**
  * Helper/utility classes

@@ -4,18 +4,74 @@ import VideoHome from "../components/VideoHome";
 
 // import translations from "../translations";
 
-const Contact = props => (
+const Services = props => (
   <div>
-    <VideoHome
-      video={props.dataContact.video}
-      contact
-      fontColor
-      title={
-        props.language === "es"
-          ? props.dataContact.frase_contacto
-          : props.dataContact.contact_phrase
-      }
-    />
+
+    Strategy
+
+Brand Positioning
+
+Content & Messaging
+
+Brand Workshops
+
+Research & Analysis
+
+Brand 
+
+Naming
+
+Identity Creation
+
+Guardianship
+
+Livery Design
+
+Brand Guidelines
+
+Art Direction
+
+Image Making
+
+Marketing
+
+Print & Publishing
+
+Creative Consulting
+
+Digital Design
+
+Digital Strategy
+
+UI/UX Design
+
+EDM Design
+
+Social Media Design
+
+Environmental 
+
+Place Experience
+
+Interior Strategies
+
+Venue Brand Touchpoints
+
+Wayfinding
+
+Content
+
+Content & Messaging
+
+Marketing Plans
+
+Illustration & Image Making
+
+Photography
+
+Videography / Animated GIFs
+
+Customer Experience
   </div>
 );
 
@@ -27,4 +83,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Contact);
+export default connect(mapStateToProps)(Services);
