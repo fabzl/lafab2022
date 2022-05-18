@@ -23,6 +23,7 @@ import { colors } from "./styles/globals";
 import { fetchData } from "./redux/actions";
 import { loaderLoading, contentLoaded, loaderVisible } from "./redux/actions";
 
+
 const Wrap = styled.div`
   display: flex;
   min-height: 100vh;

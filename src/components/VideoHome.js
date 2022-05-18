@@ -21,6 +21,20 @@ const VideoContainer = styled.div`
   overflow: hidden;
 `;
 
+const Vcenter = styled.div`
+  justify-content: center;
+  display:flex;
+`;
+
+
+const VLine = styled.div`
+  border: 3px solid black;  
+  left: 50%;
+  margin-left: -3px;
+  height: 50vh;
+  width: 6px;
+`;
+
 const Video = styled.video`
   /* Make video to at least 100% wide and tall */
   min-width: 100%;
@@ -52,14 +66,12 @@ const H1 = styled.h1`
   z-index: 300;
   color: ${colors.white};
   letter-spacing: 130%;
-  /* line-height: 2rem; */
-  font-family: "FuturaBold", "Futura", "Verdana";
+
   font-size: 3vmax;
   font-weight: 600;
   justify-content: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-transform: uppercase;
   text-align: center;
 
   &::after,
@@ -111,6 +123,7 @@ export default props => {
 
       <Text>
         <H1>{Parser(props.title)}</H1>
+        <Vcenter><VLine></VLine></Vcenter>
       </Text>
     </Section>
   );

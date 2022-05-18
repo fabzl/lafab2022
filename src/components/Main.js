@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Logo from "../img/logo_white_simple.svg";
 import Garden from "../img/image-garden-dark.jpg";
 //import translations from "../translations";
+const { language, data } = this.props;
 
 //import { colors } from "../styles/globals";
 const InTouch = styled.div`
@@ -23,13 +24,13 @@ const Hashtag = styled.h1`
   letter-spacing: 0.8px;
   font-family:  Helvetica, Arial, sans-serif;
   position:absolute;
-  font-size: 2.2rem;
+  font-size: 1rem;
   left:0;
   top:0;
   margin:0;
   transform: rotate(90deg);
   transform-origin: 0% 80%; 
-  opacity: 0.8;
+  opacity: 1;
   color:goldenrod;
 `;
 
@@ -58,9 +59,9 @@ const Main = props => {
     <div>
     <MainBlock>
         <LogoWhite className="logo" src={Logo} alt="la fabulosa" width="750px" height="600px" />
-        <Hashtag>#LAFABULOSAREPUBLICADELAMONTAÑA</Hashtag>
+        <Hashtag>LA FABULOSA REPÚBLICA DE LA MONTAÑA</Hashtag>
     </MainBlock>
-    <InTouch><h2>AGENCIA CREATIVA</h2></InTouch>  
+    <InTouch><h2>() Somos un Laboratorio Creativo Audiovisual</h2></InTouch>  
     </div>
   );
 };
