@@ -10,7 +10,7 @@ import {
 
 const apiUrl = "https://blog.lafabulosa.org/";
 const pagesEndPoint = `${apiUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
-const postsEndPoint = `${apiUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
+const postsEndPoint = `${apiUrl}/wp-json/wp/v2/posts?&per_page=100`; // Endpoint for getting Wordpress Posts
 
 const fetchSuccess = data => {
   console.log(data);

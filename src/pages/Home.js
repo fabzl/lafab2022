@@ -42,7 +42,9 @@ const H3 = styled.h3`
 const LinkTo = styled(Link)`
   color: ${colors.white};
   text-decoration: none;
-  display: block;
+  display: inline-block;
+  position: sticky;
+  top: 20px;
   padding: 5.5rem 0 4.5rem;
   transition: all 1s;
   &:hover {
@@ -64,7 +66,8 @@ const Home = props => (
     <TitleHolder>
          {props.language === "es" ? "Ultimos Proyectos" : "Latest Projects"}
     </TitleHolder>
-    <Grid data={props.data} language={props.language} />
+    <Grid data={props.data} language={props.language} gridType="Latest"/>
+   
     <AllWork>
       <H3>
         <LinkTo to="/work">{translations.home.link[props.language]}</LinkTo>

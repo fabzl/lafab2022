@@ -10,11 +10,17 @@ class Grid extends Component {
  
 
   renderBoxes = () => {
-    const { language, data } = this.props;
+  
+        const { language, data, gridType } = this.props;
 
+        const type = gridType;        
+
+        
     return data.map((item, key) => {
       // Si no existe acf implementado
       if (!item.acf.avatar_picture) return null;
+      if (!item.acf.category === "BRANDING") return null;
+
       const {
         avatar_picture: { url },
         nombre_del_proyecto,
@@ -24,7 +30,9 @@ class Grid extends Component {
         cliente,
         boxtype,
         pais,
-        country
+        country,
+        countryname,
+
       } = item.acf;
       return (
         <Box
@@ -34,7 +42,7 @@ class Grid extends Component {
           country={country}
           image={url}
           title={language === "es" ? nombre_del_proyecto : project_name}
-          country={language === "es" ? pais : country}
+          countryname={language === "es" ? pais : country}
           category={language === "es" ? categoria : category}
           client={cliente}
           videoUrl={item.acf.vimeourl}
@@ -46,23 +54,11 @@ class Grid extends Component {
 
   render() {
     const Wrap = styled.div`
-   
-    padding: 2vw;
-    column-gap: 2vw;
-    row-gap: 2vw;
-    display: grid;
-    align-self:center;
-    grid-template-columns:  1fr;
+        border: 6px solid white;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr )); 
+        justify-content: space-around;
 
-    @media screen and (max-width: 576px) {
-      grid-template-columns:  1fr 1fr;
-    }
-    @media screen and (min-width: 1400px) {
-      grid-template-columns:  1fr 1fr;
-    }
-    @media screen and (min-width: 1700px) {
-      grid-template-columns:  1fr 1fr;
-    }
+
     `;
 
     return <Wrap>

@@ -7,9 +7,24 @@ import { colors } from "../styles/globals";
 
 const Wrap = styled.div`
 
+  top: 0px;
+  grid-gap: 1rem;
+  align-items: start;   
+  padding: 5vw;
+  position: sticky;
+  display: inline-grid;
+  align-items:stretch;
+&.normal {
+  grid-column: auto / span 1 ;
+  border: 2px solid green;
+  max-width:48%;
+}
+&.wide {
+  grid-column: auto / span 2 ;
+  border: 2px solid red; 
+}
 
-  
-  position: relative;
+
   &:hover {
     > a > div {
       opacity: 1;
@@ -25,11 +40,34 @@ const Wrap = styled.div`
 `;
 
 
-const Content = styled.div`
-  opacity: 1;
-  transition: opacity 0.3s;
-  text-align: left;
+const TextHolder = styled.div`
+  position: relative;
+  transform: none;
+  border-top: 4px solid white;
+  margin-top: 10px;
+  text-align:left;
+`;
+
+const ImageHolder = styled.img`
+width: 100%;
+position: relative;
+overflow: hidden; /* <
+//background: url(${props => props.src}) no-repeat center;
+background-size:     cover;                     ------ */
+background-repeat:   no-repeat;
+background-position: center center;              /* optional, center the image */
+  .wide {
+    transform: rotaition(180deg);
+  } 
+`;
+
+const LinkTo = styled(Link)`
   color: ${colors.white};
+  text-decoration: none;
+  display: inline;
+  border: 1px solid pink;
+  position: relative;
+ 
 
   h4 {
   
@@ -60,34 +98,6 @@ const Content = styled.div`
   }
 `;
 
-const TextHolder = styled.div`
-  position: relative;
-  transform: none;
-  border-top: 4px solid white;
-  margin-top: 10px;
-  text-align:left;
-`;
-
-const ImageHolder = styled.div`
-width: 480px;
-height: 270px;
-position: relative;
-overflow: hidden;
-background: url(${props => props.src}) no-repeat center;
-background-size:     cover;                      /* <------ */
-background-repeat:   no-repeat;
-background-position: center center;              /* optional, center the image */
-  .wide {
-    transform: rotaition(180deg);
-  } 
-`;
-
-const LinkTo = styled(Link)`
-  color: ${colors.white};
-  text-decoration: none;
-  display: block;
-`;
-
 class Box extends Component {
   handleLink = e => {
     if (!this.props.link) {
@@ -98,18 +108,19 @@ class Box extends Component {
 
   render() {
     return (
-      <Wrap className={this.props.boxtype} >
+      <Wrap     className={this.props.boxtype} >
         <LinkTo
           to={this.props.link ? `/work/${this.props.link}` : "/"}
           onClick={this.handleLink}
+      
         >
-          <Content>
+         
+          
            <ImageHolder src={this.props.image}/>
             <TextHolder>
               <h4>{this.props.title}   {(!this.props.client)? null : " - " } {this.props.client}</h4>
               <h3>{this.props.category}  {(!this.props.country)? null : " - " } {this.props.country}</h3>
             </TextHolder>
-          </Content>
         </LinkTo>
       </Wrap>
     );
