@@ -5,6 +5,9 @@ import Logo from "../img/logo_white_simple.svg";
 import Garden from "../img/image-garden-dark.jpg";
 //import translations from "../translations";
 //const { language, data } = this.props;
+import LanguageSelector from "./LanguageSelector";
+import { Waypoint } from 'react-waypoint';
+
 
 //import { colors } from "../styles/globals";
 const InTouch = styled.div`
@@ -17,6 +20,15 @@ const InTouch = styled.div`
     margin:0;
   }
 }`;
+
+
+const TransmediaText = styled.h2`
+
+  text-transform: uppercase;
+  font-size: 3.3rem;
+  margin:0 auto;
+  letter-spacing: 120%;
+`;
 
 const Hashtag = styled.h1`
 
@@ -52,16 +64,40 @@ min-height: 80vh;
 `;
 
 
+const _handleWaypointEnter = () => {
+  console.log ("_handleWaypointEnter") 
+}
+const _handleWaypointLeave = () => {
+  console.log ("_handleWaypointLeave") 
+
+}
+const _handlePositionChange = () => {
+  console.log ("_handlePositionChange") 
+
+}
 
 const Main = props => {
+
+
 
   return (
     <div>
     <MainBlock>
-        <LogoWhite className="logo" src={Logo} alt="la fabulosa" width="750px" height="600px" />
+        
+    <Waypoint
+  onEnter={this._handleWaypointEnter}
+  onLeave={this._handleWaypointLeave}
+  onPositionChange={this._handlePositionChange}
+>
+
+
+
+ <LogoWhite className="logo" src={Logo} alt="la fabulosa" width="750px" height="600px" />
+</Waypoint>
+        <TransmediaText>transmedia productions</TransmediaText>
         <Hashtag>LA FABULOSA REPÚBLICA DE LA MONTAÑA</Hashtag>
     </MainBlock>
-    <InTouch><h2>() Somos un Laboratorio Creativo Audiovisual</h2></InTouch>  
+    <InTouch><h2></h2></InTouch>  
     </div>
   );
 };
