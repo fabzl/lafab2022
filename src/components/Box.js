@@ -9,11 +9,12 @@ const Wrap = styled.div`
 
   top: 0px;
   grid-gap: 1rem;
-  align-items: start;   
+
   padding: 5vw;
   position: sticky;
   display: inline-grid;
   align-items:stretch;
+  
 &.normal {
   grid-column: auto / span 1 ;
   border: 2px solid green;
@@ -108,7 +109,7 @@ class Box extends Component {
 
   render() {
     return (
-      <Wrap     className={this.props.boxtype} >
+      <Wrap  style={{ visibility:this.props.visible }}   className={this.props.boxtype} >
         <LinkTo
           to={this.props.link ? `/work/${this.props.link}` : "/"}
           onClick={this.handleLink}
