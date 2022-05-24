@@ -5,24 +5,29 @@ import { playVideo } from "../redux/actions";
 import { Link } from "react-router-dom";
 import { colors } from "../styles/globals";
 
-const Wrap = styled.div`
+import { Waypoint } from 'react-waypoint';
 
+
+const Wrap = styled.div`
+ 
   top: 0px;
   grid-gap: 1rem;
-
-  padding: 5vw;
-  position: sticky;
+  padding: 2vw;
+  position: relative;
   display: inline-grid;
   align-items:stretch;
   
 &.normal {
   grid-column: auto / span 1 ;
-  border: 2px solid green;
-  max-width:48%;
+  padding: 0;
+  width:100%;
+  :nth-child(even) {
+   
+  }
 }
 &.wide {
   grid-column: auto / span 2 ;
-  border: 2px solid red; 
+  
 }
 
 
@@ -47,9 +52,12 @@ const TextHolder = styled.div`
   border-top: 4px solid white;
   margin-top: 10px;
   text-align:left;
+  
 `;
 
 const ImageHolder = styled.img`
+
+box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 width: 100%;
 position: relative;
 overflow: hidden; /* <
@@ -66,9 +74,8 @@ const LinkTo = styled(Link)`
   color: ${colors.white};
   text-decoration: none;
   display: inline;
-  border: 1px solid pink;
   position: relative;
- 
+  padding: 3px;
 
   h4 {
   
@@ -107,22 +114,32 @@ class Box extends Component {
     }
   };
 
+  contentIn = e => {
+    console.log("contentIn",e);
+  }
+  contentOut = e => {
+    console.log("contentOut",e);
+  }
   render() {
     return (
       <Wrap  style={{ visibility:this.props.visible }}   className={this.props.boxtype} >
-        <LinkTo
+     
+         <LinkTo
           to={this.props.link ? `/work/${this.props.link}` : "/"}
           onClick={this.handleLink}
       
         >
          
-          
+         <Waypoint   onEnter={this.contentIn} onLeave={this.contentOut} >
            <ImageHolder src={this.props.image}/>
+         </Waypoint>
             <TextHolder>
               <h4>{this.props.title}   {(!this.props.client)? null : " - " } {this.props.client}</h4>
               <h3>{this.props.category}  {(!this.props.country)? null : " - " } {this.props.country}</h3>
             </TextHolder>
         </LinkTo>
+       
+
       </Wrap>
     );
   }
