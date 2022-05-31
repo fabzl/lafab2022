@@ -34,7 +34,6 @@ const Hashtag = styled.h1`
 
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  font-family:  Helvetica, Arial, sans-serif;
   position:absolute;
   font-size: 1rem;
   left:0;

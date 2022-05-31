@@ -12,14 +12,20 @@ class Grid extends Component {
   renderBoxes = () => {
   
         const { language, data, gridType } = this.props;
-
-        const type = gridType;        
-
+        console.log("gridType", gridType);
+        let type = gridType;        
+     
         
     return data.map((item, key) => {
       // Si no existe acf implementado
+      
+      if (!item.acf.category.toString() == type.toString())return null;
       if (!item.acf.avatar_picture) return null;
-      if (!item.acf.category === "BRANDING") return null;
+     
+      console.log(item.acf.project_name, type.toString(), item.acf.category.toString() == type.toString())
+     
+     
+     
 
       const {
         avatar_picture: { url },
@@ -34,8 +40,10 @@ class Grid extends Component {
         countryname,
 
       } = item.acf;
+     if (item.acf.category.toString() == type.toString()) 
       return (
         <Box
+        
           boxtype={boxtype}
           key={item.id}
           pais={pais}
@@ -54,10 +62,9 @@ class Grid extends Component {
 
   render() {
     const Wrap = styled.div`
-        border: 6px solid white;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr )); 
-        justify-content: space-around;
-
+        justify-content: space-between;
+       display:grid;
 
     `;
 

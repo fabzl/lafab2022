@@ -1,3 +1,19 @@
+/**
+ * Typography
+ * =================================
+ * - Base
+ * - Paragraphs
+ * - Headings
+ * - Type sizes
+ * - Misc
+ * - Utilities
+ *
+ * Body font size, leadings etc have been set in _variables.scss
+ *
+ * See http://modularscale.com for
+ *
+ */
+
  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,600&family=Red+Hat+Display:wght@300&family=Source+Serif+Pro:wght@200&display=swap');
 
 
@@ -11,7 +27,7 @@ body {
 	font-family: $font-family-base;
 	line-height: $leading-base;
 	color: $color-text;
-    font-family: 'Red Hat Display', sans-serif;
+
 	// Add ligatures
 	font-feature-settings: "liga", "dlig", "hist";
 	font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
@@ -20,7 +36,7 @@ body {
 	// Enable only one of them if you need them
 	// 1.
 	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
+	   -moz-font-smoothing: antialiased;
 	font-smooth:always;
 
 	// 2.
@@ -31,6 +47,7 @@ body {
  * Paragraphs
  */
 p {
+	font-family: $font-family-base;
 	margin-top: 0;
 	margin-bottom: $baseline;
 
@@ -54,8 +71,6 @@ h6 {
 	text-rendering: optimizelegibility; // Fix the character spacing for headings
 	margin-top: 0;
 	margin-bottom: $baseline;
-	font-family: 'Cormorant Garamond', serif;
-
 
 	small {
 		font-weight: normal;
