@@ -6,58 +6,73 @@ import { Waypoint } from 'react-waypoint';
 
 
 const Star = styled.img`
-  align-self:center;
-  max-width: 100px;
-  max-height: 100px;
-  &.active {
-    opacity:1;
-    border: 1px solid green; 
-  }
-  &:hover {
-    opacity:.8;
-  }
+align-self:center;
+max-width: 100px;
+max-height: 100px;
+transition: all 1s;
+&.out {
+  transform: rotate(20deg) scale(0.5);
   opacity:0;
-  transition: all 2.7s;
+}
+
+&.in {
+  opacity:1;
+  transform: rotate(0deg);
+}
+
+&.leave {
+
+}
+&:hover {
+  transform: rotate(5deg) scale(0.8);
+  opacity:0.8;
+}
+
 `;
 
 const ContainerStar = styled.div`
   justify-content:space-around;
   display:flex;
- 
+  margin: 50px;
 `;
 
+class LeftraruStar extends React.Component {
+  
+
+  state ={ 
+     activeElement : "out"
+  }
 
 
-const _handleWaypointEnter = () => {
-  console.log ("_handleWaypointEnter") 
- 
-}
-const _handleWaypointLeave = () => {
- // console.log ("_handleWaypointLeave") 
- activeElement  = false;
-}
-const _handlePositionChange = () => {
-  console.log ("_handlePositionChange") 
-  activeElement  = true;
-}
+  
+   _handleWaypointEnter = () => {
+  //  console.log ("_handleWaypointEnter")
 
-let activeElement  = false;
+    this.setState({ activeElement: "in" });
 
+  }
+   _handleWaypointLeave = () => {
+ //  console.log ("_handleWaypointLeave") 
+    this.setState({ activeElement: "out" });
+  }
+   _handlePositionChange = () => {
+   // console.log ("_handlePositionChange") 
+    this.setState({ activeElement: "leave" });
+  }
 
-const LeftraruStar = props => {
-
-
-  return (
+  render() {
+    return (
     <ContainerStar>    
-    <Waypoint
-  onEnter={this._handleWaypointEnter}
-  onLeave={this._handleWaypointLeave}
-  onPositionChange={this._handlePositionChange}
+      <Waypoint
+          onEnter={this._handleWaypointEnter}
+          onLeave={this._handleWaypointLeave}
+          onPositionChange={this._handlePositionChange}
 >
-      <Star className={"logo "+(activeElement)?  "active": ""} src={Logo} alt="Estrella de Leftraru"/>
-  </Waypoint>
+          <Star className={`${this.state.activeElement}`} src={Logo} alt="Estrella de Leftraru"/>
+        </Waypoint>
     </ContainerStar>
-  );
+    )
+  }
 };
 
 const mapStateToProps = state => {
