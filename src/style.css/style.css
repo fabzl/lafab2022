@@ -92,7 +92,6 @@
  * See http://modularscale.com for
  *
  */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,600&family=Red+Hat+Display:wght@300&family=Source+Serif+Pro:wght@200&display=swap");
 html {
   font-size: 18px;
   -webkit-text-size-adjust: 100%; }
@@ -1181,12 +1180,6 @@ pre {
  * Global app/site styles
  * =================================
  */
-body {
-  background-color: #f1f1f1;
-  margin: 0 auto;
-  color: #daa520;
-  padding-left: 1rem; }
-
 /**
  * Default layout container
  */

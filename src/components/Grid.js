@@ -12,7 +12,7 @@ class Grid extends Component {
   renderBoxes = () => {
   
         const { language, data, gridType } = this.props;
-        console.log("gridType", gridType);
+       // console.log("gridType", gridType);
         let type = gridType;        
      
         
@@ -22,7 +22,7 @@ class Grid extends Component {
       if (!item.acf.category.toString() == type.toString())return null;
       if (!item.acf.avatar_picture) return null;
      
-      console.log(item.acf.project_name, type.toString(), item.acf.category.toString() == type.toString())
+    //  console.log(item.acf.project_name, type.toString(), item.acf.category.toString() == type.toString())
      
      
      

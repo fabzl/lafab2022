@@ -115,10 +115,10 @@ class Box extends Component {
   };
 
   contentIn = e => {
-    console.log("contentIn",e);
+    //console.log("contentIn",e);
   }
   contentOut = e => {
-    console.log("contentOut",e);
+   // console.log("contentOut",e);
   }
   render() {
     return (

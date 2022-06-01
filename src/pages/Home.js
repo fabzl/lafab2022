@@ -8,6 +8,7 @@ import translations from "../translations";
 import { colors } from "../styles/globals";
 import Main from "../components/Main";
 import LeftraruStar from "../components/LeftraruStar";
+import BGColorChange from "../components/BGColorChange";
 
 
 
@@ -64,8 +65,12 @@ const LinkTo = styled(Link)`
   }
 `;
 
+
+
+
 const Home = props => (
   <div>
+    <BGColorChange/>
     <Main></Main>
     <VideoHome
       video={props.dataHome.videos}
@@ -75,14 +80,17 @@ const Home = props => (
           : props.dataHome.intro_text_english
       }
     />
+    <LeftraruStar/>       
     <TitleHolder>
          {props.language === "es" ? "Proyectos Narrativos" : "Storytelling Projects"}
     </TitleHolder>
     <IntroTextHolder>
-         {props.language === "es" ? "No hay agonía mas grande que una historia no contada." : "There is no bigger agony that an untold story."}
+         {props.language === "es" ? "No hay agonía mas grande que una historia no contada. Aquí nuestra carpeta de proyectos." : "There is no bigger agony that an untold story. Here our developing project folder"}
     </IntroTextHolder>
     <Grid data={props.data} language={props.language} gridType="STORYTELLING"/>
 
+
+    <LeftraruStar/>
     <TitleHolder>
          {props.language === "es" ? "Proyectos Interactivos" : "Interactive Projects"}
     </TitleHolder>
@@ -90,8 +98,8 @@ const Home = props => (
          {props.language === "es" ? "Trabajamos con múltiples lenguajes de programación para crear fabulosas webs, apps y proyectos experimentales a pedido." : "We work with multiple programming languages to create amazing websites, apps and experimental projects on demand."}
     </IntroTextHolder>
     <Grid data={props.data} language={props.language} gridType="INTERACTIVE"/>
-      <LeftraruStar>       
-      </LeftraruStar>
+    
+    <LeftraruStar/>
     <TitleHolder>
          {props.language === "es" ? "Identidad" : "Branding"}
     </TitleHolder>
@@ -99,8 +107,8 @@ const Home = props => (
          {props.language === "es" ? "Trabajamos con nuestros clientes para construir una experiencia de marca única." : "We work with our customers to build a unique brand experience."}
     </IntroTextHolder>
     <Grid data={props.data} language={props.language} gridType="BRANDING"/>
-    <LeftraruStar>       
-      </LeftraruStar>
+    
+    <LeftraruStar/>       
     <TitleHolder>
          {props.language === "es" ? "Juegos de Mesa" : "Board Games"}
     </TitleHolder>
@@ -108,18 +116,17 @@ const Home = props => (
          {props.language === "es" ? "En la Fabulosa soñamos con crear juegos de mesa.  Aquí algunos de nuestros prototipos.": "La Fabulosa makes boardgames, here some of our prototypes."}
     </IntroTextHolder>
     <Grid data={props.data} language={props.language} gridType="GAMES"/>
-    <LeftraruStar>       
-      </LeftraruStar>
+    
+    <LeftraruStar/>
     <TitleHolder>
-         {props.language === "es" ? "COMERCIAL" : "COMERCIAL"}
+         {props.language === "es" ? "Proyectos Comerciales" : "Comercial Projects"}
     </TitleHolder>
     <IntroTextHolder>
          {props.language === "es" ? "Trabajamos para cumplir las mas altas exigiencias de nuestros clientes.": "We work to meet the highest demands of our customers."}
     </IntroTextHolder>
     <Grid data={props.data} language={props.language} gridType="COMERCIAL"/>
-    <LeftraruStar>       
-      </LeftraruStar>
-
+  
+    <LeftraruStar/>
 
     <AllWork>
       <H3>
