@@ -242,9 +242,12 @@ class Header extends React.Component {
           <LinkTo onClick={this.checkMobileNav} to="/">
             {translations.header.home[language]}
           </LinkTo>
+          <LinkTo onClick={this.checkMobileNav} to="/">
+            {translations.header.works[language]}
+          </LinkTo>
 
-          <LinkTo onClick={this.checkMobileNav} to="/work">
-            {translations.header.work[language]}
+          <LinkTo onClick={this.checkMobileNav} to="/graphics">
+            {translations.header.graphics[language]}
           </LinkTo>
 
           <LinkTo onClick={this.checkMobileNav} to="/about">
@@ -259,9 +262,9 @@ class Header extends React.Component {
             {translations.header.services[language]}
           </LinkTo>
 
-          <LinkTo onClick={this.checkMobileNav} to="/shop">
+{/*           <LinkTo onClick={this.checkMobileNav} to="/shop">
             {translations.header.shop[language]}
-          </LinkTo>
+          </LinkTo> */}
 
           <Social header />
 

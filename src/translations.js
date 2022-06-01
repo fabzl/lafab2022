@@ -19,8 +19,12 @@ const Translations = {
       es: "Reel",
       en: "Reel"
     },
-    work: {
-      en: "Work",
+    graphics: {
+      en: "Graphics",
+      es: "Gráficas"
+    },
+    works: {
+      en: "Works",
       es: "Trabajos"
     },
     about: {

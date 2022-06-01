@@ -9,31 +9,42 @@ const Star = styled.img`
   align-self:center;
   max-width: 100px;
   max-height: 100px;
+  &.active {
+    opacity:1;
+    border: 1px solid green; 
+  }
+  &:hover {
+    opacity:.8;
+  }
+  opacity:0;
+  transition: all 2.7s;
 `;
 
 const ContainerStar = styled.div`
   justify-content:space-around;
   display:flex;
-  opacity:0;
-  transition: all 0.7s;
+ 
 `;
 
 
 
 const _handleWaypointEnter = () => {
-  //console.log ("_handleWaypointEnter") 
+  console.log ("_handleWaypointEnter") 
+ 
 }
 const _handleWaypointLeave = () => {
  // console.log ("_handleWaypointLeave") 
-
+ activeElement  = false;
 }
 const _handlePositionChange = () => {
   console.log ("_handlePositionChange") 
-
+  activeElement  = true;
 }
 
-const LeftraruStar = props => {
+let activeElement  = false;
 
+
+const LeftraruStar = props => {
 
 
   return (
@@ -43,7 +54,7 @@ const LeftraruStar = props => {
   onLeave={this._handleWaypointLeave}
   onPositionChange={this._handlePositionChange}
 >
-      <Star className="logo" src={Logo} alt="la fabulosa" width="750px" height="600px" />
+      <Star className={"logo "+(activeElement)?  "active": ""} src={Logo} alt="Estrella de Leftraru"/>
   </Waypoint>
     </ContainerStar>
   );
