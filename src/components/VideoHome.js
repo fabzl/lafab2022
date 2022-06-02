@@ -66,8 +66,8 @@ const H1 = styled.h1`
   z-index: 300;
   color: ${colors.white};
   letter-spacing: 130%;
-
-  font-size: 3vmax;
+  padding:0 20%;
+  font-size: 2.5vmax;
   font-weight: 600;
   justify-content: center;
   -webkit-font-smoothing: antialiased;

@@ -7,7 +7,6 @@ import { colors } from "../styles/globals";
 
 import { Waypoint } from 'react-waypoint';
 
-
 const Wrap = styled.div`
  
   top: 0px;

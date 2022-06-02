@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 
 const ContainerColor = styled.div`
-
+  
+  background:#373B44;
   position: fixed;
   width: 100%;
   height: 100%;

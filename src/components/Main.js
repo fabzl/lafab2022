@@ -25,9 +25,9 @@ const InTouch = styled.div`
 const TransmediaText = styled.h2`
 
   text-transform: uppercase;
-  font-size: 3.3rem;
+  font-size: 2.3rem;
   margin:0 auto;
-  letter-spacing: 120%;
+  letter-spacing: 150%;
 `;
 
 const Hashtag = styled.h1`
