@@ -1,4 +1,11 @@
 const Translations = {
+  main: {
+    contact: {
+      es: "hablanos ...",
+      en: "talk to us ..."
+    },
+
+  },
   header: {
     home: {
       es: "Home",
@@ -41,9 +48,13 @@ const Translations = {
       en: "See all the works",
       es: "Ver todos los trabajos"
     }, 
+    link: {
+      en: "See all the works",
+      es: "Ver todos los trabajos"
+    }, 
      agency: {
-      es: "We are a full-service agency,  inventamos, designing and building beautiful digital products, brands, and experiences. For a better world.",
-      en: "Somos una agencia de servicio completo, inventamos, diseñamos y creamos hermosos productos, marcas y experiencias digitales. Por un mundo mejor"
+      es: "We are a full-service trans media agency, creating stories, designing and building beautiful digital products, brands, and experiences. For a better world.",
+      en: "Somos una agencia transmedia de servicio completo, inventamos historias , diseñamos y creamos hermosos productos, marcas y experiencias digitales. Por un mundo mejor"
     },
 
   },
