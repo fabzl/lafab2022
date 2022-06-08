@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
-
 import translations from "../translations";
 //import logo from "../img/logo_main_white.svg";
+import FaceBookChat from "../components/FacebookChat";
 
 import { colors } from "../styles/globals";
 
@@ -237,7 +237,7 @@ class Header extends React.Component {
             <Logo src={logo} />
           </Link>
         </LogoContainer> */}
-
+        <FaceBookChat/>
         <NavContainer className={this.state.openMenu && "active"}>
           <LinkTo onClick={this.checkMobileNav} to="/">
             {translations.header.home[language]}
@@ -246,17 +246,17 @@ class Header extends React.Component {
             {translations.header.works[language]}
           </LinkTo>
 
-          <LinkTo onClick={this.checkMobileNav} to="/graphics">
+      {/*     <LinkTo onClick={this.checkMobileNav} to="/graphics">
             {translations.header.graphics[language]}
           </LinkTo>
-
+ */}
           <LinkTo onClick={this.checkMobileNav} to="/about">
             {translations.header.about[language]}
           </LinkTo>
 
-          <LinkTo onClick={this.checkMobileNav} to="/contact">
+{/*           <LinkTo onClick={this.checkMobileNav} to="/contact">
             {translations.header.contact[language]}
-          </LinkTo>
+          </LinkTo> */}
 
           <LinkTo onClick={this.checkMobileNav} to="/services">
             {translations.header.services[language]}
@@ -276,7 +276,7 @@ class Header extends React.Component {
               <span>
                 <i className="fas fa-angle-up fa-4x" />
               </span>
-              {translations.footer.top[this.props.language]}
+               {translations.footer.top[this.props.language]}
             </ToTop>
           </BackToTop>
 

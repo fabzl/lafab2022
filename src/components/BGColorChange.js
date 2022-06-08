@@ -15,18 +15,16 @@ const ContainerColor = styled.div`
 `;
 const colorArray = ["#73C8A9","#9A151A","#57ACCA", "#BD5532", "#373B44", "#631814"];
   
-
-
 class BGColorChange extends React.Component {
-
 
   state ={ 
     stylesObj : "#373B44"
   }
+  notificationInterval = null;
 
   componentDidMount() {
     let colorPos = 0;
-    setInterval(() => {
+    this.notificationInterval=  setInterval(() => {
       if(colorArray.length - 1 > colorPos) {
         this.setState({
          color : colorArray[colorPos]
@@ -41,27 +39,17 @@ class BGColorChange extends React.Component {
     }, 10000)
   }
 
+  
+componentWillUnmount() {
+  clearInterval(this.notificationInterval);
+}
+
  changeColor(e) {
    this.setState({
      color: e.target.value
    });
  }
 
-  
-   _handleWaypointEnter = () => {
-  //  console.log ("_handleWaypointEnter")
-
-    this.setState({ activeElement: "in" });
-
-  }
-   _handleWaypointLeave = () => {
- //  console.log ("_handleWaypointLeave") 
-    this.setState({ activeElement: "out" });
-  }
-   _handlePositionChange = () => {
-   // console.log ("_handlePositionChange") 
-    this.setState({ activeElement: "leave" });
-  }
 
   render() {
     const stylesObj = {

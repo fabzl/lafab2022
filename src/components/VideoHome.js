@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../styles/globals";
-import WebFont from "webfontloader";
 import Parser from "html-react-parser";
 
 const Section = styled.section`
@@ -100,12 +99,6 @@ const H1 = styled.h1`
     right: -7rem;
   }
 `;
-
-WebFont.load({
-  google: {
-    families: ["Poppins:800", "Arial"]
-  }
-});
 
 export default props => {
   let videoOverride = props.video;

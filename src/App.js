@@ -10,6 +10,7 @@ import ShowWork from "./pages/ShowWork";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
+import FacebookChat from "./components/FacebookChat";
 
 // Components
 import Header from "./components/Header";

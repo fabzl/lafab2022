@@ -48,7 +48,6 @@ const H3 = styled.h3`
   font-style: italic;
   line-height: 1.2em;
   font-size: 2rem;
-  font-family: "poppins";
   text-transform: uppercase;
 `;
 
@@ -127,11 +126,19 @@ const Home = props => (
     <Grid data={props.data} language={props.language} gridType="COMERCIAL"/>
   
     <LeftraruStar/>
-
+    <AllWork>
+      <H3>
+        <LinkTo to="/graphics">{translations.home.link[props.language]}</LinkTo>
+      </H3>
+    </AllWork>
     <AllWork>
       <H3>
         <LinkTo to="/about">{translations.home.link[props.language]}</LinkTo>
       </H3>
+      <H3>
+        <LinkTo to="/services">{translations.home.link[props.language]}</LinkTo>
+      </H3>
+      
     </AllWork>
   </div>
 );
