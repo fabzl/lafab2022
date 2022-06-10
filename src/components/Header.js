@@ -5,7 +5,8 @@ import { Link, NavLink } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 import translations from "../translations";
 //import logo from "../img/logo_main_white.svg";
-import FaceBookChat from "../components/FacebookChat";
+import TalkIcon from "../img/talk_icon.svg";
+//import FaceBookChat from "../components/FacebookChat";
 
 import { colors } from "../styles/globals";
 
@@ -25,6 +26,25 @@ const Nav = styled.nav`
     rgba(0, 0, 0, 0) 100%
   );
 `;
+
+
+
+const LinkToFixed = styled(NavLink)`
+  position: fixed;
+  bottom:5vw;
+  right:8vw;
+  color: ${colors.white};
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: 1s all;
+  background: transparent;
+  font-weight: 750;
+   
+`;
+
+
+
 
 const LinkTo = styled(NavLink)`
   position: relative;
@@ -138,6 +158,20 @@ const smoothScroll = () => {
   }
 };
 
+
+const ContactIcon = styled.img`
+
+  width: 60px;
+  height: 60px;
+  &:hover {
+    transform:scale(1.2);
+  }
+  transition: all 0.7s;
+  &:click {
+    transform:scale(1.2);
+  }
+`;
+
 const BackToTop = styled.div`
   flex: 1;
   text-align: right;
@@ -237,7 +271,11 @@ class Header extends React.Component {
             <Logo src={logo} />
           </Link>
         </LogoContainer> */}
-        <FaceBookChat/>
+
+          <LinkToFixed onClick={this.checkMobileNav} to="/contact">
+            <ContactIcon  src={TalkIcon}/>
+          </LinkToFixed>
+
         <NavContainer className={this.state.openMenu && "active"}>
           <LinkTo onClick={this.checkMobileNav} to="/">
             {translations.header.home[language]}
@@ -254,12 +292,13 @@ class Header extends React.Component {
             {translations.header.about[language]}
           </LinkTo>
 
-{/*           <LinkTo onClick={this.checkMobileNav} to="/contact">
-            {translations.header.contact[language]}
-          </LinkTo> */}
-
           <LinkTo onClick={this.checkMobileNav} to="/services">
             {translations.header.services[language]}
+          </LinkTo>
+
+
+          <LinkTo onClick={this.checkMobileNav} to="/contact">
+            {translations.header.contact[language]}
           </LinkTo>
 
 {/*           <LinkTo onClick={this.checkMobileNav} to="/shop">

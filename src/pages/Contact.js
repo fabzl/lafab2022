@@ -1,12 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-import VideoHome from "../components/VideoHome";
+import VideoHome from "../components/VideoHomeContact";
+import {Route, Link, Routes, useLocation} from 'react-router-dom';
 
 // import translations from "../translations";
+console.log('current URL 👉️', window.location.href);
 
 const Contact = props => (
+
+
+
+
   <div>
-    <VideoHome
+    {/* <VideoHomeContact
       video={props.dataContact.video}
       contact
       fontColor
@@ -15,9 +21,12 @@ const Contact = props => (
           ? props.dataContact.frase_contacto
           : props.dataContact.contact_phrase
       }
-    />
+    /> */}
+    {props.dataContact.mail}
+
   </div>
 );
+
 
 const mapStateToProps = state => {
   return {
