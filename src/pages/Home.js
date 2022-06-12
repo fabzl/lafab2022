@@ -10,8 +10,6 @@ import Main from "../components/Main";
 import LeftraruStar from "../components/LeftraruStar";
 import BGColorChange from "../components/BGColorChange";
 
-
-
 const TitleHolder = styled.h2`
   color: ${colors.white}
   text-align:center;
