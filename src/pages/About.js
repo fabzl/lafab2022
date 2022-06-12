@@ -8,7 +8,9 @@ import translations from "../translations";
 import { colors } from "../styles/globals";
 
 const Wrap = styled.div`
-  height: 50vh;
+  height: 50vw;
+  min-height: 50vh;
+  max-height: 80vh;
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
 `;
@@ -18,10 +20,11 @@ const Acerca = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${colors.black};
+  color: ${colors.white};
   text-align: center;
   padding: 10% 20%;
   margin: 0 auto;
+  background: ${colors.gray};
 `;
 
 const H2 = styled.h2`
@@ -45,7 +48,7 @@ const H2 = styled.h2`
     color: ${colors.black};
   }
 `;
-
+/* 
 const Description = styled.p`
   font-weight: 700;
   font-style: italic;
@@ -62,12 +65,12 @@ const Description = styled.p`
   }
   @media (min-width: 720px) {
     font-size: 22px;
-  }
+  } 
 
   &.dark {
     color: ${colors.black};
   }
-`;
+`;*/
 
 const Laurel = styled.img`
 width:60%;
@@ -110,9 +113,6 @@ const Prize= styled.div`
   align-self:  center;
   width:100%;
   position: relative;
-  @media (min-width: 1200px) {
-    min-height: 20vw;
-  }
 
 `;
 
@@ -143,8 +143,8 @@ const Prizes = styled.div`
 `;
 const ProjectNameText = styled.h3`
     diplay:block;
-    max-width: 50%;
-    margin:  5% 25% 1% 25%;
+    max-width: 40%;
+    margin:  5% 30% 1% 30%;
     font-weight:900;
     font-size: 1.6rem;
    
@@ -152,7 +152,7 @@ const ProjectNameText = styled.h3`
       font-size: 1.2rem;
     }
     @media (min-width: 1600px) {
-      font-size: 2.6rem;
+      font-size: 1.8rem;
      }
 
 `;
@@ -160,13 +160,13 @@ const PrizeNameText = styled.p`
     flex-direction: column;
     max-width: 40%; 
     margin:  0 30% 5% 30%;
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight:900;
     @media (max-width: 720px) {
       font-size: 0.8rem;
     }
     @media (min-width: 1600px) {
-      font-size: 2.2rem;
+      font-size: 1rem;
      }
 `;
 const PrizeWrapper = styled.div`
