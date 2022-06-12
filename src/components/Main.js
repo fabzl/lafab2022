@@ -485,7 +485,7 @@ class Main extends React.Component {
 		  <LogoWhite className={`${this.state.activeElement}`}>
 				  <svg version="1.1" id="Layer_1" xlink="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1190.76 538.3"  xmlSpace="preserve" width="1190.760009765625" height="538.2999877929688">
 					<g className="logo-group">
-			<path class={`${"st0 svg-elem-1 "+this.state.activeElement.toString()}`} d="M265.66,414.48c0-11.41-10.37-12.66-10.37-12.66c0,5.53-4.11,14.51-8.65,18.99
+			<path className={`${"st0 svg-elem-1 "+this.state.activeElement.toString()}`} d="M265.66,414.48c0-11.41-10.37-12.66-10.37-12.66c0,5.53-4.11,14.51-8.65,18.99
 			  c-4.64,4.57-8.54,12.83-39.76,12.83c-33.23,0-46.34-12.79-86.45-38.73c-19.73-12.76-35.83-19.6-49.91-21.45
 			  c30.67-13.38,35.19-43.26,32.85-80.01c-2.67-41.86-2.67-96.19,0-113.12c2.67-16.92,12.47-43.64,36.52-42.75
 			  c24.05,0.89,16.03,30.28,16.03,30.28s20.49-9.8,24.05-20.49c3.56-10.69,5.34-19.6,0-20.49c-5.34-0.89-40.08-18.7-66.8,4.45

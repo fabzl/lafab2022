@@ -6,7 +6,7 @@ import LanguageSelector from "./LanguageSelector";
 import translations from "../translations";
 //import logo from "../img/logo_main_white.svg";
 import TalkIcon from "../img/talk_icon.svg";
-//import FaceBookChat from "../components/FacebookChat";
+
 
 import { colors } from "../styles/globals";
 
@@ -40,6 +40,10 @@ const LinkToFixed = styled(NavLink)`
   transition: 1s all;
   background: transparent;
   font-weight: 750;
+
+  &.hide {
+    display: none;
+  }
    
 `;
 
@@ -47,6 +51,8 @@ const LinkToFixed = styled(NavLink)`
 
 
 const LinkTo = styled(NavLink)`
+
+
   position: relative;
   text-indent: 0;
   color: ${colors.white};
@@ -60,8 +66,13 @@ const LinkTo = styled(NavLink)`
   transition: 1s all;
   background: transparent;
   font-weight: 750;
+  padding: 5px 20px;
   &:first-child {
     display: none;
+  }
+  &.current {
+  //  background: ${colors.gray};
+  
   }
 
   @media (max-width: 740px) {
@@ -160,7 +171,16 @@ const smoothScroll = () => {
 
 
 const ContactIcon = styled.img`
+   
+      filter:drop-shadow(
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075)
+      );
 
+ 
   width: 60px;
   height: 60px;
   &:hover {
@@ -244,7 +264,8 @@ const NavContainer = styled.div`
 
 class Header extends React.Component {
   state = {
-    openMenu: false
+    openMenu: false,
+    currentSection: "",
   };
 
   openMenu = () => {
@@ -257,12 +278,25 @@ class Header extends React.Component {
   };
 
   checkMobileNav = props => {
+    this.detectCurrentSection();
     if (this.state.openMenu && "active") {
       this.closeMenu();
     }
   };
 
+  detectCurrentSection = () => {
+   
+    let pathArray = window.location.pathname.split( '/' );
+    let URL =pathArray[pathArray.length-1];
+    let URLlength = pathArray.length-1;
+    this.setState({ currentSection: URL });
+    console.log("currentSection",URLlength,this.state.currentSection)
+    this.forceUpdate()
+ 
+  };
+
   render() {
+
     const { language } = this.props;
     return (
       <Nav>
@@ -272,15 +306,17 @@ class Header extends React.Component {
           </Link>
         </LogoContainer> */}
 
-          <LinkToFixed onClick={this.checkMobileNav} to="/contact">
+
+
+          <LinkToFixed className={`${(this.state.currentSection ==="contact")? "hide" : ""}`} onClick={this.checkMobileNav} to="/contact">
             <ContactIcon  src={TalkIcon}/>
           </LinkToFixed>
 
         <NavContainer className={this.state.openMenu && "active"}>
-          <LinkTo onClick={this.checkMobileNav} to="/">
+          <LinkTo className={`${(this.state.currentSection ==="home")? "current" : ""}`}  onClick={this.checkMobileNav} to="/">
             {translations.header.home[language]}
           </LinkTo>
-          <LinkTo onClick={this.checkMobileNav} to="/">
+          <LinkTo className={`${(this.state.currentSection ==="")? "current" : ""}`} onClick={this.checkMobileNav} to="/">
             {translations.header.works[language]}
           </LinkTo>
 
@@ -288,22 +324,23 @@ class Header extends React.Component {
             {translations.header.graphics[language]}
           </LinkTo>
  */}
-          <LinkTo onClick={this.checkMobileNav} to="/about">
+          <LinkTo className={`${(this.state.currentSection ==="about")? "current" : ""}`} onClick={this.checkMobileNav} to="/about">
             {translations.header.about[language]}
           </LinkTo>
 
-          <LinkTo onClick={this.checkMobileNav} to="/services">
+          <LinkTo onClick={this.checkMobileNav} className={`${(this.state.currentSection ==="services")? "current" : ""}`} to="/services">
             {translations.header.services[language]}
           </LinkTo>
 
 
-          <LinkTo onClick={this.checkMobileNav} to="/contact">
+          <LinkTo onClick={this.checkMobileNav} className={`${(this.state.currentSection ==="contact")? "current" : ""}`} to="/contact">
             {translations.header.contact[language]}
           </LinkTo>
 
 {/*           <LinkTo onClick={this.checkMobileNav} to="/shop">
             {translations.header.shop[language]}
           </LinkTo> */}
+
 
           <Social header />
 

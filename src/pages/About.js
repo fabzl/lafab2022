@@ -18,7 +18,7 @@ const Acerca = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${colors.white};
+  color: ${colors.black};
   text-align: center;
   padding: 10% 20%;
   margin: 0 auto;
@@ -27,7 +27,6 @@ const Acerca = styled.div`
 const H2 = styled.h2`
   font-weight: 700;
   font-style: italic;
-  text-transform: uppercase;
   line-height: 1.2em;
   margin: 2rem 0 0.6em;
   letter-spacing: 130%;
@@ -97,6 +96,11 @@ const Image = styled.div`
   overflow: hidden;
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
+ img {
+  &.wide {
+    width: 100vw;
+  }
+}
 `;
 
 const Prize= styled.div`
@@ -193,7 +197,7 @@ const About = props => {
 
 
   const {
-    // about_image_big,
+    about_image_big,
     about_image_small_1,
     about_image_small_2,
     about_image_small_3,
@@ -203,7 +207,15 @@ const About = props => {
     //premios,
     //awards,
     descripcion,
-    description
+    description,
+    historia,
+    history,
+    about_image_history,
+    about_history_small_1,
+    about_image_history_2
+
+
+
   } = data;
 
 
@@ -256,8 +268,16 @@ const About = props => {
        { (about_image_small_3 === false ) ? "":<Image src={about_image_small_3.url} />}
        { (about_image_small_4 === false ) ? "":<Image src={about_image_small_4.url} />}
       </Images>
-
-      <Description>{language === "es" ? descripcion : description}</Description>
+     
+      <Acerca>
+        <H2 className="title-part line-1 font-smooth">
+          {language === "es" ? historia : history}
+        </H2>
+      </Acerca>
+      <Images>
+       { (about_history_small_1 === false ) ? "":<Image src={about_history_small_1.url} />}
+       { (about_image_history === false ) ? "":<Image ClassName="wide" src={about_image_history.url} />}
+      </Images>
       <Prizes>
         <Box>
           <div>

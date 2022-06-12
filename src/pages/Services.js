@@ -1,10 +1,29 @@
-import React from "react";
 import { connect } from "react-redux";
 import VideoHome from "../components/VideoHome";
+import React, { useState } from 'react';
+import { Waypoint } from 'react-waypoint';
 
 // import translations from "../translations";
 
-const Services = props => (
+function Services () { 
+  const [currentSection, detectCurrentSection] = useState(0);
+  let pathArray = window.location.pathname.split( '/' );
+  let URL =pathArray[pathArray.length-1];
+ 
+
+  const _handleWaypointEnter = () => {
+    //  console.log ("_handleWaypointEnter")
+  
+    detectCurrentSection();
+  
+    }
+
+
+return (
+
+  <Waypoint
+          onEnter={_handleWaypointEnter}
+          >
   <div>
 
     Strategy
@@ -73,8 +92,15 @@ Videography / Animated GIFs
 
 Customer Experience
   </div>
-);
+  </Waypoint>
 
+  )
+};
+
+
+
+
+  
 const mapStateToProps = state => {
   return {
     data: state.data.posts,

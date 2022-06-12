@@ -43,7 +43,7 @@ export const fetchData = dispatch => async dispatch => {
 
   res = await axios.get(pagesEndPoint);
   const pages = res.data;
-on   dispatch(fetchSuccess({ posts, pages }));
+  dispatch(fetchSuccess({ posts, pages }));
   // axios
   //   .get(postsEndPoint)
   //   .then(res => {

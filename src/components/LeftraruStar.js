@@ -51,6 +51,8 @@ class LeftraruStar extends React.Component {
     this.setState({ activeElement: "in" });
 
   }
+
+  
    _handleWaypointLeave = () => {
  //  console.log ("_handleWaypointLeave") 
     this.setState({ activeElement: "out" });
