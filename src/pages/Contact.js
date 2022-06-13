@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import VideoHome from "../components/VideoHomeContact";
+import VideoHomeSimple from "../components/VideoHomeSimple";
 import {Route, Link, Routes, useLocation} from 'react-router-dom';
 
 // import translations from "../translations";
