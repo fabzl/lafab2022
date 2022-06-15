@@ -24,21 +24,13 @@ const Links = styled.div`
 
 const Icons = styled.div`
   align-self: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  a:not(:last-child) {
-    margin-right: 1.5rem;
-  }
-  .x {
-    margin: 1.5rem;
-    text-transform: uppercase;
-  }
-
+  padding-bottom: 1.5rem;
+  
 `;
 
 
 const Image = styled.img` 
-  transform: translateY(10px);
+transform: translateY(10px);
 `;
 
 
@@ -46,10 +38,11 @@ const Mailto = styled.a`
 
   text-decoration: none;
   color: #ffffff;
-  margin-top: 3rem;
+  padding-bottom: 1rem;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 2rem;
+  
   `;
 
   const Content = styled.div`
@@ -108,79 +101,29 @@ const Contact = props => (
           : props.dataContact.contact_phrase
       }
     </h3>
-    <Icons>
-    <a href="tel:+56930965485" target="_blank">
-   <Image
-     src={WhatsAppIcon}
-     alt="whatsapp"
-     width="28"
-     height="28"
-   />
-  +56 9 3096 5485
- </a>
- <a href="https://www.instagram.com/_la_fabulosa_" target="_blank"> 
-   <Image
-     src={InstagramIcon}
-     alt="instagram"
-     width="28"
-     height="29"
-   />instagram
- </a>
- <a href="https://twitter.com/holalafabulosa1" target="_blank">
-   <Image
-     src={TwitterIcon}
-     alt="twitter"
-     width="28"
-     height="28"
-   />
-   Twitter
- </a>
-  <a href="https://www.linkedin.com/in/la-fabulosa-republica-de-la-montana/" target="_blank"> 
-   <Image
-     src={LinkedInIcon}
-     alt="linkedin"
-     width="28"
-     height="32"
-   />
-   LinkedIn
- </a>
- <a
-   href="https://www.youtube.com/c/fabianandrade"
-   target="_blank"
- >
-   <Image
-     src={YoutubeIcon}
-     alt="youtube"
-     width="28"
-     height="29"
-   />
-   Youtube
- </a>
- <a
-   href="https://www.facebook.com/la.fabulosa.republica.de.la.montana"
-   target="_blank"
- >
-   <Image
-     src={FacebookIcon}
-     alt="facebook"
-     width="28"
-     height="32"
-   /> Facebook
- </a>
- </Icons>
 
-     <Links>
+    <Links>
        <Mailto
          href={
            "mailto:hola@lafabulosa.org?subject=Contacto%20desde%20lafabulosa"
          }
        >
-         <i className="far fa-envelope fa-2x" />
-         hola@lafabulosa.org
-     
+          hola@lafabulosa.org
          </Mailto>
-
      </Links>
+
+    <Icons>
+    <a href="tel:+56930965485" target="_blank">
+    <Image
+     src={WhatsAppIcon}
+     alt="whatsapp"
+     width="28"
+     height="28"
+   />
+
+   +56 9 3096 5485
+  </a>
+ </Icons> 
   </Content>
 
   </Waypoint>

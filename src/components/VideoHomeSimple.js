@@ -4,7 +4,7 @@ import { colors } from "../styles/globals";
 import Parser from "html-react-parser";
 
 const Section = styled.section`
-  height: ${props => (props.contact ? 80 : 100)}vh;
+  height: ${props => (props.contact ? 60 : 100)}vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -25,7 +25,6 @@ const VideoContainer = styled.div`
 const Video = styled.video`
   /* Make video to at least 100% wide and tall */
   min-width: 100%;
-  min-height: 100%;
 
   /* Setting width & height to auto prevents the browser from stretching or squishing the video */
   width: auto;
