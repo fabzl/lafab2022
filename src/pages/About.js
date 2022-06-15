@@ -4,8 +4,26 @@ import { connect } from "react-redux";
 
 import laurel from "../img/laurels_black.svg";
 import translations from "../translations";
-
+import { Waypoint } from 'react-waypoint';
 import { colors } from "../styles/globals";
+
+
+const smoothScroll = () => {
+  const scrollY = window.scrollY;
+  if (scrollY > 0) {
+    setTimeout(() => {
+      window.scrollTo(0, scrollY - 30 >= 0 ? window.scrollY - 30 : 0);
+      smoothScroll();
+    }, 10);
+  }
+};
+
+
+const  _handleWaypointEnterMain = e => {
+  smoothScroll()
+  console.log ("_handleWaypointEnterMain", e);
+}
+
 
 const Wrap = styled.div`
   height: 50vw;
@@ -255,6 +273,10 @@ const About = props => {
  // console.dir(listadeNombresArray[props.language][0])
  
   return (
+
+    <Waypoint
+    onEnter={_handleWaypointEnterMain}
+    >
     <div>
       <Wrap src={props.data.about_image_big.url} />
       <Acerca>
@@ -297,6 +319,7 @@ const About = props => {
         </Box>
       </Prizes>
     </div>
+    </Waypoint>
   );
 };
 

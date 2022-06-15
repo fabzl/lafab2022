@@ -6,7 +6,7 @@ export const colors = {
   gray: "#282c34",
   white: "#FFF",
   violet: "#daa520",
-  orange: "#33c29f"
+  orange: "#fe7c08;"
 };
 
 // keyframes returns a unique name based on a hash of the contents of the keyframes

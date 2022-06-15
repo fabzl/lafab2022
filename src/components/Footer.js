@@ -34,9 +34,9 @@ const Mailto = styled.a`
 
 
 const Manifest = styled.p` 
-   font-size: 0.75rem;
-   max-width: 50%;
+   font-size: 1rem;
    align-self: center;
+   font-weight: 750;
 `;
 
 
@@ -198,7 +198,7 @@ const Footer = props => (
     </Router>
 
   <div className="x">X</div>
-  <Manifest>Creative boutique and permaculture farm from the foothills of the Andes.</Manifest>
+  <Manifest>TRANSMEDIA PRODUCTIONS</Manifest>
   <Icons>
 
   <a href="tel:+56930965485" target="_blank">
