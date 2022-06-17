@@ -54,28 +54,31 @@ const TextHolder = styled.div`
   
 `;
 
-const ContentHolder = styled.div`
-  &.inside {
-    border: 1px solid pink;
-    opacity: 1; 
+
+const Parallelogram = styled.div` 
+  width: 150px;
+  height: 100px;
+  transform: skew(20deg);
+  background: black;
+  &:before {
+    content: 'develoment'
   }
-  transition: all 2s;
-  opacity: 0;
 `;
+
 
 const ImageHolder = styled.img`
 
-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-width: 100%;
-position: relative;
-overflow: hidden; /* <
-//background: url(${props => props.src}) no-repeat center;
-background-size:     cover;                     ------ */
-background-repeat:   no-repeat;
-background-position: center center;              /* optional, center the image */
-  .wide {
-    transform: rotaition(180deg);
-  } 
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: relative;
+  overflow: hidden; /* <
+  //background: url(${props => props.src}) no-repeat center;
+  background-size:     cover;                     ------ */
+  background-repeat:   no-repeat;
+  background-position: center center;              /* optional, center the image */
+    .wide {
+      transform: rotation(180deg);
+    } 
 `;
 
 const LinkTo = styled(Link)`
@@ -116,23 +119,29 @@ const LinkTo = styled(Link)`
 
 class Box extends Component {
 
+
+
   state = {
     activeElements:[],
   }
   handleLink = e => {
-    if (!this.props.link) {
-      e.preventDefault();
-      this.props.playVideo(this.props.videoUrl);
-    }
+
+    console.log("handleLink",this.props.boxtype)
+    // if (!this.props.link) {
+    //   e.preventDefault();
+
+
+    //   this.props.playVideo(this.props.videoUrl);
+    // }
   };
 
   contentIn = e => {
-    this.state.activeElements.push(e);
-    console.log("contentIn",e, this.state.activeElements);
+   // this.state.activeElements.push(e);
+   // console.log("contentIn",e, this.state.activeElements);
 
   }
   contentOut = e => {
-   console.log("contentOut",e);
+  // console.log("contentOut",e);
 
   }
   render() {
@@ -144,13 +153,21 @@ class Box extends Component {
           onClick={this.handleLink}
       
         >
-         <Waypoint  onEnter={this.contentIn} onLeave={this.contentOut} >
+       
           
          <Reveal repeat>
-      <Tween from={{ opacity: 0, transform:translateY(100%)}} duration={0.7}>
+      <Tween from={{ opacity: 0, y: 100,  stagger: { // wrap advanced options in an object
+    each: 1,
+    from: "center",
+    grid: "auto",
+    ease: "power2.inOut"
    
-           <div >
+  }}} duration={0.7}>
+   
+           <div>
+           <Waypoint  onEnter={this.contentIn} onLeave={this.contentOut} >
               <ImageHolder src={this.props.image}/>
+            </Waypoint>
                <TextHolder>
                 <h4>{this.props.title}   {(!this.props.client)? null : " - " } {this.props.client}</h4>
                 <h3>{this.props.category}  {(!this.props.country)? null : " - " } {this.props.country}</h3>
@@ -159,7 +176,7 @@ class Box extends Component {
                
       </Tween>
     </Reveal>
-         </Waypoint>
+       
           
         </LinkTo>
        

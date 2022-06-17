@@ -38,6 +38,7 @@ class Grid extends Component {
         pais,
         country,
         countryname,
+        link
 
       } = item.acf;
      if (item.acf.category.toString() == type.toString()) 
@@ -54,7 +55,7 @@ class Grid extends Component {
           category={language === "es" ? categoria : category}
           client={cliente}
           videoUrl={item.acf.vimeourl}
-          link={this.props.link ? item.slug : null}
+          link={link}
         />
       );
     });
