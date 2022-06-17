@@ -2,15 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import VideoHomeSimple from "../components/VideoHomeSimple";
-import {Route, Link, Routes, useLocation} from 'react-router-dom';
+//import {Route, Link, Routes, useLocation} from 'react-router-dom';
 import { Waypoint } from 'react-waypoint';
 // import translations from "../translations";
 import WhatsAppIcon from "../icons/whatsapp-icon.svg";
-import InstagramIcon from "../icons/instagram-icon.svg";
-import TwitterIcon from "../icons/twitter-icon.svg";
-import LinkedInIcon from "../icons/linkedin-icon.svg";
-import YoutubeIcon from "../icons/youtube-icon.svg";
-import FacebookIcon from "../icons/facebook-icon.svg";
 import { colors } from "../styles/globals";
 
 const Links = styled.div`
