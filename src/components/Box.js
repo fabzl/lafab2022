@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { playVideo } from "../redux/actions";
 import { Link } from "react-router-dom";
 import { colors } from "../styles/globals";
-
+import { Reveal, Tween } from 'react-gsap';
 import { Waypoint } from 'react-waypoint';
 
 const Wrap = styled.div`
@@ -52,6 +52,15 @@ const TextHolder = styled.div`
   margin-top: 10px;
   text-align:left;
   
+`;
+
+const ContentHolder = styled.div`
+  &.inside {
+    border: 1px solid pink;
+    opacity: 1; 
+  }
+  transition: all 2s;
+  opacity: 0;
 `;
 
 const ImageHolder = styled.img`
@@ -106,6 +115,10 @@ const LinkTo = styled(Link)`
 `;
 
 class Box extends Component {
+
+  state = {
+    activeElements:[],
+  }
   handleLink = e => {
     if (!this.props.link) {
       e.preventDefault();
@@ -114,10 +127,13 @@ class Box extends Component {
   };
 
   contentIn = e => {
-    //console.log("contentIn",e);
+    this.state.activeElements.push(e);
+    console.log("contentIn",e, this.state.activeElements);
+
   }
   contentOut = e => {
-   // console.log("contentOut",e);
+   console.log("contentOut",e);
+
   }
   render() {
     return (
@@ -128,14 +144,23 @@ class Box extends Component {
           onClick={this.handleLink}
       
         >
-         
-         <Waypoint   onEnter={this.contentIn} onLeave={this.contentOut} >
-           <ImageHolder src={this.props.image}/>
+         <Waypoint  onEnter={this.contentIn} onLeave={this.contentOut} >
+          
+         <Reveal repeat>
+      <Tween from={{ opacity: 0, transform:translateY(100%)}} duration={0.7}>
+   
+           <div >
+              <ImageHolder src={this.props.image}/>
+               <TextHolder>
+                <h4>{this.props.title}   {(!this.props.client)? null : " - " } {this.props.client}</h4>
+                <h3>{this.props.category}  {(!this.props.country)? null : " - " } {this.props.country}</h3>
+               </TextHolder>
+            </div>
+               
+      </Tween>
+    </Reveal>
          </Waypoint>
-            <TextHolder>
-              <h4>{this.props.title}   {(!this.props.client)? null : " - " } {this.props.client}</h4>
-              <h3>{this.props.category}  {(!this.props.country)? null : " - " } {this.props.country}</h3>
-            </TextHolder>
+          
         </LinkTo>
        
 

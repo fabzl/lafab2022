@@ -1,8 +1,8 @@
 const Translations = {
   main: {
     contact: {
-      es: "hablanos ...",
-      en: "talk to us ..."
+      es: "contáctanos",
+      en: "contact us"
     },
 
   },

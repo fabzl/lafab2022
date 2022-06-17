@@ -11,13 +11,12 @@ import { Link, NavLink } from "react-router-dom";
 import { colors } from "../styles/globals";
 
 
-
 const LinkTo = styled(NavLink)`
   position: relative;
   text-indent: 0;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin: 0 2rem;
   align-items: center;
   line-height: 2rem;
@@ -25,7 +24,7 @@ const LinkTo = styled(NavLink)`
   transition: 1s all;
   background: transparent;
   font-weight: 750;
-  color: ${colors.black}
+  color: ${colors.white};
 
 
   &.active,
@@ -61,9 +60,10 @@ const InTouch = styled.div`
   padding: 0;  
   height: 20vh;
   width: 100%;
-  background-color: goldenrod;
+  background-color: ${colors.black};
+  color: #000000;
   h2 {
-	color: #000000;
+
 	margin:0;
   }
 }`;
