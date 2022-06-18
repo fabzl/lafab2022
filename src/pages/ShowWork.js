@@ -10,6 +10,15 @@ import laurel from "../img/laurels_black.svg";
 import { Waypoint } from 'react-waypoint';
 import { colors } from "../styles/globals";
 
+const Play = styled.div`
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  & i {
+    width: 0.5em;
+  }
+`;
 
 
 
@@ -197,10 +206,19 @@ const ShowWork = props => {
           language === "es" ? nombre_del_proyecto : project_name
         }
         url={url}
-        videoUrl={vimeourl}
+        src=
         prevLink={prevLink}
         nextLink={nextLink}
       />
+
+<Play onClick={() => props.playVideo(props.videoUrl)}>
+        <i className="far fa-play-circle fa-5x" />
+      </Play>
+
+
+{vimeourl}
+
+
 
       <Desc
         title={language === "es" ? nombre_del_proyecto : project_name}
