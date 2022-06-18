@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import logo from "../img/logo_white_simple.svg";
 import translations from "../translations";
 import { colors } from "../styles/globals";
-import Social from "./Social";
+//simport Social from "./Social";
 
 import WhatsAppIcon from "../icons/whatsapp-icon.svg";
 import InstagramIcon from "../icons/instagram-icon.svg";

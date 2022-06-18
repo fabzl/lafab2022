@@ -192,7 +192,6 @@ const ShowWork = props => {
   >
     <div>
 
-
       <MainImage
         nombre_del_proyecto={
           language === "es" ? nombre_del_proyecto : project_name

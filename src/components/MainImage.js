@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
 import { playVideo } from "../redux/actions";
 import { colors } from "../styles/globals";
-
+import CloseBtn from "../icons/close-times.svg";
 
 const LinkTo = styled(Link)`
   color: ${colors.white};
@@ -14,49 +13,22 @@ const LinkTo = styled(Link)`
   position: relative;
   padding: 3px;
 
-  h4 {
-  
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-style: italic;
-    opacity: 1;
-    margin: 5px 0 0 -3px;
-  
-  }
-
-  h3 {
-    font-size: 0.8rem;
-    font-weight: 700;
-    font-style: italic;
-    text-transform: uppercase;
-    color: ${colors.red};
-    margin: 2px 0 0 -3px;
-    line-height: 1em;
-   
-  }
-
-  h3,
-  h4 {
-    transition: transform 0.8s, opacity 1.2s;
-    transition-timing-function: cubic-bezier(0.1, 0.1, 0.2, 1), ease;
-  }
+ 
 `;
 
 
-const Close = styled.a`
-  width: 50px;
-  height: 50px;
-  position: fixed ;
+const Close = styled.img`
+  width: 60px;
+  height: 60px;
+  position: fixed;
   z-index: 500;
-  left: 8vw;
-  bottom: 10vh;
+  left: 90px;
   font-size: 1.2rem;
- 
+  bottom:90px;
   &:hover {
     transform:scale(1.2);
   }
-  transition: all 0.7s;
+  transition: all 0.3s;
   &:click {
     transform:scale(1.2);
   }
@@ -108,16 +80,15 @@ const Arrow = styled(Link)`
   position: fixed ;
   z-index: 500;
   display: flex;
-  width: 60px;
   justify-content: center;
   background: transparent;
   top:0;
+  bottom: 90px;
+
   
   & svg {
     transition: all 0.3s;
-    margin-bottom: 3vw;
-    padding-bottom: 2vw;
-
+    margin-bottom: 75px;
   }
   &.prev {
     left: 0;
@@ -150,10 +121,6 @@ const Arrow = styled(Link)`
   }
 `;
 
-
-
-
-
 const Center = styled.div`
   display: flex;
   align-items: center;
@@ -179,12 +146,8 @@ const MainImage = props => (
     </Arrow>
    
     <LinkTo to="/">
-      <Close >
-      <i className="fas fa-times-circle fa-4x" />
-      </Close>
+      <Close src={CloseBtn} alt="CloseBtn" />
     </LinkTo>
-   
-
 
     <Center>
       <H1>{props.nombre_del_proyecto}</H1>
