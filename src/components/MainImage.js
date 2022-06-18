@@ -7,15 +7,9 @@ import { colors } from "../styles/globals";
 import CloseBtn from "../icons/close-times.svg";
 
 const LinkTo = styled(Link)`
-  color: ${colors.white};
   text-decoration: none;
-  display: inline;
   position: relative;
-  padding: 3px;
-
- 
 `;
-
 
 const Close = styled.img`
   width: 60px;
@@ -38,36 +32,39 @@ const Close = styled.img`
     padding-bottom: 2vw;
     transform-origin: center;
   }
-
-
 `;
-
-
 
 
 const Wrap = styled.div`
-  display: flex;
-  justify-content: space-between;
-  min-height: 30vh;
-  width: 80vw;
+
+  width: 100vw;
   align-items: center;
-  background: url(${props => props.src}) no-repeat center;
+  //background: url(${props => props.src}) no-repeat center;
+  background-color:${colors.black};
   background-size: cover;
-  color: ${colors.white};
+ 
   font-size: 1.6rem;
 `;
 
+const HeroImg = styled.img`
+width: 100%;
+display:block;
+margin: 0;
+max-height: 80vh;
+object-fit: contain;
+`;
+
+
 const H1 = styled.h1`
-  margin: 0;
-  font-size: 3.2rem;
-  line-height: 1em;
+  font-size: 2rem;
   text-transform: uppercase;
   font-weight: 700;
   font-style: italic;
   text-align: center;
-  transform: translateY(-10vh);
-  max-width:80vw;
- 
+  width: 100vw;
+  padding: 5vh;
+  background-color:${colors.black};
+  color: ${colors.white};
   @media (max-width: 600px) {
     font-size: 2.2rem;
   }
@@ -126,21 +123,12 @@ const Center = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  max-width:80vw;
+  width:100vw;
 `;
 
-const Play = styled.div`
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
-  & i {
-    width: 0.5em;
-  }
-`;
 
 const MainImage = props => (
-  <Wrap src={props.url}>
+  <Wrap >
     <Arrow className="prev" to={props.prevLink}>
       <i className="fas fa-chevron-left fa-4x" />
     </Arrow>
@@ -150,12 +138,14 @@ const MainImage = props => (
     </LinkTo>
 
     <Center>
-      <H1>{props.nombre_del_proyecto}</H1>
-      <Play onClick={() => props.playVideo(props.videoUrl)}>
-        <i className="far fa-play-circle fa-5x" />
-      </Play>
+
+    <HeroImg src={props.url} alt={props.nombre_del_proyecto}/>
+
     </Center>
 
+ 
+
+    <H1>{props.nombre_del_proyecto}</H1>
     <Arrow className="next"to={props.nextLink}>
       <i className="fas fa-chevron-right fa-4x" />
     </Arrow>
