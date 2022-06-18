@@ -31,8 +31,8 @@ const Nav = styled.nav`
 
 const LinkToFixed = styled(NavLink)`
   position: fixed;
-  bottom:5vw;
-  right:8vw;
+  bottom:90px;
+  right:90px;
   color: ${colors.white};
   text-decoration: none;
   display: inline-block;
@@ -186,7 +186,7 @@ const ContactIcon = styled.img`
   &:hover {
     transform:scale(1.2);
   }
-  transition: all 0.7s;
+  transition: all 0.3s;
   &:click {
     transform:scale(1.2);
   }
