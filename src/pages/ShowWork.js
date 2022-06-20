@@ -11,9 +11,19 @@ import laurel from "../img/laurels_black.svg";
 import { Waypoint } from 'react-waypoint';
 import { colors } from "../styles/globals";
 import ReactHtmlParser from 'react-html-parser'; 
+import VideoPlayerRelative from "../components/VideoPlayerRelative";
 
 
-
+const LinkWeb = styled.a`
+   color: ${colors.white};
+   text-transform: uppercase;
+   font-weight:750;
+   font-size: 1rem;
+   text-align: center ;
+   width:  100vw;
+   display: flex;
+  justify-content: center;
+`;
 
 const InfoSmall = styled.h5`
   color: ${colors.white};
@@ -21,6 +31,8 @@ const InfoSmall = styled.h5`
   position: fixed;
   font-size:0.7rem;
   z-index: 500;
+  margin: 0;
+  padding: 0;
 
   &.category {
     top: 145px;
@@ -298,6 +310,12 @@ const ShowWork = props => {
       ) }
       </DescriptionText>
 
+      
+    {(vimeourl !== false )?
+       
+       <VideoPlayerRelative video={vimeourl}>
+       </VideoPlayerRelative>: ""
+      } 
 
 {/* desc2  */}
       <DescriptionText>
@@ -312,7 +330,7 @@ const ShowWork = props => {
 
     { (items[key].acf.picture_two.url !== false )? 
       <ProjectImage
-        url={items[key].acf.picture_two.url}
+        url={items[key].acf.picture_two.url5}
       /> : ""
     }
 
@@ -334,8 +352,8 @@ const ShowWork = props => {
       /> : ""
     } 
 
-{/* desc4  */}
-<DescriptionText>
+    {/* desc4  */}
+    <DescriptionText>
      { ReactHtmlParser (
      ( language === "es" ) ? 
      
@@ -353,8 +371,8 @@ const ShowWork = props => {
     }
 
 
-{/* desc5  */}
-<DescriptionText>
+    {/* desc5  */}
+    <DescriptionText>
      { ReactHtmlParser (
      ( language === "es" ) ? 
      
@@ -369,25 +387,13 @@ const ShowWork = props => {
         url={items[key].acf.picture_five.url}
       /> : ""
     }
-      {/* {if (vimeourl) {
-        <Play onClick={() => props.playVideo(props.videoUrl)}>
-          <i className="far fa-play-circle fa-5x" />
-        </Play>
-      } */}
+
+      {(web)? 
+        <LinkWeb href={web} target="_blank"  rel="noopener noreferrer"> 
+          <i class="fa fa-link" aria-hidden="true"></i> {web}
+      </LinkWeb>
       
-
-
-
-      {/* <Desc
-        title={language === "es" ? nombre_del_proyecto : project_name}
-        desc={
-          language === "es" ? descripcion_del_proyecto : project_description
-        }
-        client={cliente}
-        web={web}
-        language={language}
-      /> */}
-
+      : ""}
 
       </Container>
 
@@ -408,7 +414,7 @@ const ShowWork = props => {
     </Section>
 
     </Waypoint>
-  );
+  )
 };
 
 const mapStateToProps = state => {

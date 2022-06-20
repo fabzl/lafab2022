@@ -201,7 +201,7 @@ const Footer = props => (
   <Manifest>TRANSMEDIA PRODUCTIONS</Manifest>
   <Icons>
 
-  <a href="tel:+56930965485" target="_blank">
+  <a href="tel:+56930965485" target="_blank" rel="noopener noreferrer">
     
       <Image
         src={WhatsAppIcon}
@@ -210,7 +210,7 @@ const Footer = props => (
         height="28"
       />
     </a>
-    <a href="https://www.instagram.com/_la_fabulosa_" target="_blank"> 
+    <a href="https://www.instagram.com/_la_fabulosa_" target="_blank" rel="noopener noreferrer"> 
       <Image
         src={InstagramIcon}
         alt="instagram"
@@ -218,7 +218,7 @@ const Footer = props => (
         height="29"
       />
     </a>
-    <a href="https://twitter.com/holalafabulosa1" target="_blank">
+    <a href="https://twitter.com/holalafabulosa1" target="_blank" rel="noopener noreferrer">
       <Image
         src={TwitterIcon}
         alt="twitter"
@@ -226,7 +226,7 @@ const Footer = props => (
         height="28"
       />
     </a>
-     <a href="https://www.linkedin.com/in/la-fabulosa-republica-de-la-montana/" target="_blank"> 
+     <a href="https://www.linkedin.com/in/la-fabulosa-republica-de-la-montana/" target="_blank" rel="noopener noreferrer"> 
       <Image
         src={LinkedInIcon}
         alt="linkedin"
@@ -236,7 +236,7 @@ const Footer = props => (
     </a>
     <a
       href="https://www.youtube.com/c/fabianandrade"
-      target="_blank"
+      target="_blank" rel="noopener noreferrer"
     >
       <Image
         src={YoutubeIcon}
@@ -247,7 +247,7 @@ const Footer = props => (
     </a>
     <a
       href="https://www.facebook.com/la.fabulosa.republica.de.la.montana"
-      target="_blank"
+      target="_blank" rel="noopener noreferrer"
     >
       <Image
         src={FacebookIcon}
