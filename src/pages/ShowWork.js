@@ -20,9 +20,13 @@ const LinkWeb = styled.a`
    font-weight:750;
    font-size: 1rem;
    text-align: center ;
-   width:  100vw;
+   width:  100%;
    display: flex;
   justify-content: center;
+  padding: 10px;
+  span{
+    width:5px;
+  }
 `;
 
 const InfoSmall = styled.h5`
@@ -286,6 +290,7 @@ const ShowWork = props => {
         url={url}
         prevLink={prevLink}
         nextLink={nextLink}
+        smoothScroll={smoothScroll}
       />
       
       <InfoSmall className="category">  {(language === "es") ? categoria  : category_display } 
@@ -311,7 +316,7 @@ const ShowWork = props => {
       </DescriptionText>
 
       
-    {(vimeourl !== false )?
+    {(vimeourl)?
        
        <VideoPlayerRelative video={vimeourl}>
        </VideoPlayerRelative>: ""
@@ -390,10 +395,19 @@ const ShowWork = props => {
 
       {(web)? 
         <LinkWeb href={web} target="_blank"  rel="noopener noreferrer"> 
-          <i class="fa fa-link" aria-hidden="true"></i> {web}
+          <i class="fa fa-link" aria-hidden="true"></i> <span></span>{web.replace(/^https?:\/\//, '')}
       </LinkWeb>
       
       : ""}
+
+      {(file_download)? 
+        <LinkWeb href={file_download.url}   target="_blank"  download rel="noopener noreferrer"> 
+          <i class="fa fa-download" aria-hidden="true"></i> <span></span> {file_download.filename}
+      </LinkWeb>
+      
+      : ""}
+
+
 
       </Container>
 

@@ -18,7 +18,7 @@ const Close = styled.img`
   z-index: 500;
   left: 90px;
   font-size: 1.2rem;
-  bottom:90px;
+  bottom:70px;
   &:hover {
     transform:scale(1.2);
   }
@@ -129,8 +129,8 @@ const Center = styled.div`
 
 const MainImage = props => (
   <Wrap >
-    <Arrow className="prev" to={props.prevLink}>
-      <i className="fas fa-chevron-left fa-4x" />
+    <Arrow className="prev" to={props.prevLink} >
+      <i className="fas fa-chevron-left fa-2x" />
     </Arrow>
    
     <LinkTo to="/">
@@ -139,15 +139,13 @@ const MainImage = props => (
 
     <Center>
 
-    <HeroImg src={props.url} alt={props.nombre_del_proyecto}/>
+      <HeroImg src={props.url} alt={props.nombre_del_proyecto}/>
 
     </Center>
 
- 
-
     <H1>{props.nombre_del_proyecto}</H1>
     <Arrow className="next"to={props.nextLink}>
-      <i className="fas fa-chevron-right fa-4x" />
+      <i className="fas fa-chevron-right fa-2x" />
     </Arrow>
   </Wrap>
 );

@@ -10,6 +10,7 @@ const VideoContainer = styled.div`
   justify-content: center;
   align-items: center;
   align-self:center;
+  height: auto;
   margin: 0 auto;
 `;
 

@@ -31,7 +31,7 @@ const Nav = styled.nav`
 
 const LinkToFixed = styled(NavLink)`
   position: fixed;
-  bottom:90px;
+  bottom:60px;
   right:90px;
   color: ${colors.white};
   text-decoration: none;
