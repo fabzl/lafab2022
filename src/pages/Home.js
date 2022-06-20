@@ -18,6 +18,8 @@ const TitleHolder = styled.h2`
   font-size:2rem;
   margin-bottom:3px;
 `;
+
+
 const IntroTextHolder = styled.p`
   color: ${colors.white}
   text-align:center;

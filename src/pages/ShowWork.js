@@ -4,11 +4,50 @@ import styled from "styled-components";
 import translations from "../translations";
 import { connect } from "react-redux";
 import MainImage from "../components/MainImage";
-import Desc from "../components/Desc";
+import ProjectImage from "../components/ProjectImage";
+//import Desc from "../components/Desc";
 //import translations from "../translations";
 import laurel from "../img/laurels_black.svg";
 import { Waypoint } from 'react-waypoint';
 import { colors } from "../styles/globals";
+import ReactHtmlParser from 'react-html-parser'; 
+
+
+
+
+const InfoSmall = styled.h5`
+  color: ${colors.white};
+  text-transform: uppercase;
+  position: fixed;
+  font-size:0.7rem;
+  z-index: 500;
+
+  &.category {
+    top: 145px;
+    left: 0px;
+    transform: rotate(90deg);
+    font-size:0.9rem;
+  }
+  &.country {
+    top: 90px;
+    right:20px;
+    transform: rotate(90deg);
+  }
+  &.year {
+    bottom: 260px;
+    right: 20px;
+    transform: rotate(90deg);
+  }
+`;
+
+
+
+
+const Section = styled.div`
+  padding: 4rem 0 2rem;
+  width:100vw;
+  background-color:${colors.black};
+`;
 
 const Play = styled.div`
   cursor: pointer;
@@ -20,6 +59,13 @@ const Play = styled.div`
   }
 `;
 
+const Container = styled.div`
+  max-width: 60rem;
+  margin: 0 auto;
+  color: ${colors.white};
+  text-align: left;
+ 
+`;
 
 
 const smoothScroll = () => {
@@ -37,7 +83,8 @@ const  _handleWaypointEnterMain = e => {
   //console.log ("_handleWaypointEnterMain", e);
 };
 
-
+const DescriptionText = styled.p`
+padding: 0 90px;`;
 
 const H2 = styled.h2`
   font-weight: 700;
@@ -170,19 +217,38 @@ const ShowWork = props => {
   if (key < 0) return <Redirect to="/" />;
 
   const {
-    avatar_picture: { url },
-    nombre_del_proyecto,
-    project_name,
-    descripcion_del_proyecto,
-    project_description,
-    vimeourl,
-    cliente,
+    avatar_picture: { url},
+    ano_del_proyecto,
     awards,
+    boxtype,
+    categoria,
+    category,
+    category_display,
+    cliente,
+    country,
+    descripcion_del_proyecto,
+    descripcion_del_proyecto_2,
+    descripcion_del_proyecto_3,
+    descripcion_del_proyecto_4,
+    descripcion_del_proyecto_5,
+    file_download,
+    nombre_del_proyecto,
+    pais,
+    picture_five: { url5, title5, heigth5, width5 },
+    picture_four: { url4, title4, heigth4, width4 },
+    picture_three: { url3, title3, heigth3, width3 },
+    picture_two: { url2, title2, heigth2, width2 },
     premios,
-    web
+    project_description,
+    project_description_2,
+    project_description_3,
+    project_description_4,
+    project_description_5,
+    project_name,
+    vimeourl,
+    web,
+
   } = items[key].acf;
-
-
 
 
 
@@ -199,28 +265,120 @@ const ShowWork = props => {
     <Waypoint
     onEnter={_handleWaypointEnterMain}
   >
-    <div>
+    <Section>
 
       <MainImage
         nombre_del_proyecto={
           language === "es" ? nombre_del_proyecto : project_name
         }
         url={url}
-        src=
         prevLink={prevLink}
         nextLink={nextLink}
       />
+      
+      <InfoSmall className="category">  {(language === "es") ? categoria  : category_display } 
+      </InfoSmall>
+      <InfoSmall className="country">  {(language === "es") ? pais  : country }</InfoSmall>
+      <InfoSmall className="year"> {ano_del_proyecto} </InfoSmall>
+        
+ 
 
-<Play onClick={() => props.playVideo(props.videoUrl)}>
-        <i className="far fa-play-circle fa-5x" />
-      </Play>
-
-
-{vimeourl}
 
 
 
-      <Desc
+     <Container>
+
+     <DescriptionText>
+     { ReactHtmlParser (
+     ( language === "es" ) ? 
+     
+      (descripcion_del_proyecto !== "" ) ? descripcion_del_proyecto : ""
+     : 
+      (project_description !== "" ) ?   project_description : ""
+      ) }
+      </DescriptionText>
+
+
+{/* desc2  */}
+      <DescriptionText>
+     { ReactHtmlParser (
+     ( language === "es" ) ? 
+     
+      (descripcion_del_proyecto_2 !== "" ) ? descripcion_del_proyecto_2 : ""
+     : 
+      (project_description_2 !== "" ) ?   project_description_2 : ""
+      ) }
+      </DescriptionText>
+
+    { (items[key].acf.picture_two.url !== false )? 
+      <ProjectImage
+        url={items[key].acf.picture_two.url}
+      /> : ""
+    }
+
+    {/* desc3  */}
+    <DescriptionText>
+     { ReactHtmlParser (
+     ( language === "es" ) ? 
+     
+      (descripcion_del_proyecto_3 !== "" ) ? descripcion_del_proyecto_3 : ""
+     : 
+      (project_description_3 !== "" ) ?   project_description_3 : ""
+      ) }
+      </DescriptionText>
+    
+    
+      { (items[key].acf.picture_three.url !== false )? 
+      <ProjectImage
+        url={items[key].acf.picture_three.url}
+      /> : ""
+    } 
+
+{/* desc4  */}
+<DescriptionText>
+     { ReactHtmlParser (
+     ( language === "es" ) ? 
+     
+      (descripcion_del_proyecto_4 !== "" ) ? descripcion_del_proyecto_4 : ""
+     : 
+      (project_description_4 !== "" ) ?   project_description_4 : ""
+      ) }
+      </DescriptionText>
+
+
+      { (items[key].acf.picture_four.url !== false )? 
+      <ProjectImage
+        url={items[key].acf.picture_four.url}
+      /> : ""
+    }
+
+
+{/* desc5  */}
+<DescriptionText>
+     { ReactHtmlParser (
+     ( language === "es" ) ? 
+     
+      (descripcion_del_proyecto_5 !== "" ) ? descripcion_del_proyecto_5 : ""
+     : 
+      (project_description_5 !== "" ) ?   project_description_5 : ""
+      ) }
+      </DescriptionText>
+
+      { (items[key].acf.picture_five.url !== false )? 
+      <ProjectImage
+        url={items[key].acf.picture_five.url}
+      /> : ""
+    }
+      {/* {if (vimeourl) {
+        <Play onClick={() => props.playVideo(props.videoUrl)}>
+          <i className="far fa-play-circle fa-5x" />
+        </Play>
+      } */}
+      
+
+
+
+      {/* <Desc
         title={language === "es" ? nombre_del_proyecto : project_name}
         desc={
           language === "es" ? descripcion_del_proyecto : project_description
@@ -228,7 +386,12 @@ const ShowWork = props => {
         client={cliente}
         web={web}
         language={language}
-      />
+      /> */}
+
+
+      </Container>
+
+
         {(!awards  || !premios ) ? "": 
         <Prizes>
         <Box>
@@ -242,7 +405,7 @@ const ShowWork = props => {
       </Prizes>}
 
 
-    </div>
+    </Section>
 
     </Waypoint>
   );
