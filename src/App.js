@@ -10,7 +10,7 @@ import ShowWork from "./pages/ShowWork";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
-import FacebookChat from "./components/FacebookChat";
+
 
 // Components
 import Header from "./components/Header";
@@ -20,7 +20,7 @@ import Modal from "./components/Modal";
 import Fade from "./components/Fade";
 import Footer from "./components/Footer";
 
-import { colors } from "./styles/globals";
+//import { colors } from "./styles/globals";
 import { fetchData } from "./redux/actions";
 import { loaderLoading, contentLoaded, loaderVisible } from "./redux/actions";
 

@@ -25,7 +25,6 @@ class Grid extends Component {
     //  console.log(item.acf.project_name, type.toString(), item.acf.category.toString() == type.toString())
      
      
-     
 
       const {
         avatar_picture: { url },

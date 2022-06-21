@@ -127,9 +127,33 @@ const Center = styled.div`
 `;
 
 
+
+// const smoothScroll = () => {
+
+//   console.log("smoot")
+//   const scrollY = window.scrollY;
+//   if (scrollY > 0) {
+//     setTimeout(() => {
+//       window.scrollTo(0, scrollY - 30 >= 0 ? window.scrollY - 30 : 0);
+//       smoothScroll();
+//     }, 10);
+//   }
+// };
+
+// const  _handleWaypointEnterMain = e => {
+//   smoothScroll()
+//   //console.log ("_handleWaypointEnterMain", e);
+// };
+
+
+
+
+
 const MainImage = props => (
+
+
   <Wrap >
-    <Arrow className="prev" to={props.prevLink} >
+    <Arrow className="prev" to={props.prevLink}   onClick={props.smoothScroll}>
       <i className="fas fa-chevron-left fa-2x" />
     </Arrow>
    
@@ -139,12 +163,13 @@ const MainImage = props => (
 
     <Center>
 
-      <HeroImg src={props.url} alt={props.nombre_del_proyecto}/>
+    <HeroImg src={props.url} alt={props.nombre_del_proyecto}/>
 
     </Center>
 
+
     <H1>{props.nombre_del_proyecto}</H1>
-    <Arrow className="next"to={props.nextLink}>
+    <Arrow className="next"to={props.nextLink}  onClick={props.smoothScroll}>
       <i className="fas fa-chevron-right fa-2x" />
     </Arrow>
   </Wrap>

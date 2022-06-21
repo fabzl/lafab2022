@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import VideoHome from "../components/VideoHome";
 import Grid from "../components/Grid";
-import translations from "../translations";
+//import translations from "../translations";
 import { colors } from "../styles/globals";
 import Main from "../components/Main";
 import LeftraruStar from "../components/LeftraruStar";
@@ -13,15 +13,15 @@ import { Reveal, Tween } from 'react-gsap';
 
 
 const TitleHolder = styled.h2`
-  color: ${colors.white}
-  text-align:center;
-  font-size:2rem;
-  margin-bottom:3px;
+  color: ${colors.white};
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3px;
 `;
 
 
 const IntroTextHolder = styled.p`
-  color: ${colors.white}
+  color: ${colors.white};
   text-align:center;
   font-size:2rem;
   margin-bottom:3px;
@@ -90,7 +90,7 @@ const Home = props => (
               {props.language === "es" ? "Proyectos Narrativos" : "Storytelling Projects"}
           </TitleHolder>
           <IntroTextHolder>
-              {props.language === "es" ? "No hay agonía mas grande que una historia no contada. Aquí nuestra carpeta de proyectos." : "There is no bigger agony that an untold story. Here our developing project folder"}
+              {props.language === "es" ? props.dataHome.intro_narrativas : props.dataHome.intro_narratives }
           </IntroTextHolder>
          </div>
       </Tween>
@@ -109,13 +109,11 @@ const Home = props => (
             {props.language === "es" ? "Proyectos Interactivos" : "Interactive Projects"}
          </TitleHolder>
          <IntroTextHolder>
-            {props.language === "es" ? "Trabajamos con múltiples lenguajes de programación para crear fabulosas webs, apps y proyectos experimentales a pedido." : "We work with multiple programming languages to create amazing websites, apps and experimental projects on demand."}
+            {props.language === "es" ? props.dataHome.intro_interactivo : props.dataHome.intro_interactive}
           </IntroTextHolder>
          </div>
       </Tween>
     </Reveal>
-  
-    
     <Grid data={props.data} language={props.language} gridType="INTERACTIVE"/>
     
     <LeftraruStar/>
@@ -127,7 +125,7 @@ const Home = props => (
           {props.language === "es" ? "Identidad" : "Branding"}
         </TitleHolder>
         <IntroTextHolder>
-          {props.language === "es" ? "Trabajamos con nuestros clientes para construir una experiencia de marca única." : "We work with our customers to build a unique brand experience."}
+          {props.language === "es" ? props.dataHome.intro_identidad : props.dataHome.intro_identity }
         </IntroTextHolder>
         </div>
       </Tween>
@@ -136,32 +134,16 @@ const Home = props => (
 
     <Grid data={props.data} language={props.language} gridType="BRANDING"/>
     
-    <LeftraruStar/>  
 
-    <Reveal repeat>
-      <Tween from={{ opacity: 0 }} duration={2}>
-        <div>
-          <TitleHolder>
-              {props.language === "es" ? "Juegos de Mesa" : "Board Games"}
-          </TitleHolder>
-          <IntroTextHolder>
-              {props.language === "es" ? "En la Fabulosa soñamos con crear juegos de mesa.  Aquí algunos de nuestros prototipos.": "La Fabulosa makes boardgames, here some of our prototypes."}
-          </IntroTextHolder>
-         </div>
-      </Tween>
-    </Reveal>
-   
-    <Grid data={props.data} language={props.language} gridType="GAMES"/>
-    
     <LeftraruStar/>
     <Reveal repeat>
       <Tween from={{ opacity: 0 }} duration={2}>
         <div>
           <TitleHolder>
-              {props.language === "es" ? "Proyectos Comerciales" : "Comercial Projects"}
+              {props.language === "es" ? "Proyectos Comerciales" : "Commercial Projects"}
           </TitleHolder>
           <IntroTextHolder>
-              {props.language === "es" ? "Trabajamos para cumplir las mas altas exigiencias de nuestros clientes.": "We work to meet the highest demands of our customers."}
+              {props.language === "es" ? props.dataHome.intro_comercial : props.dataHome.intro_commercial}
           </IntroTextHolder>
        </div>
       </Tween>
@@ -171,15 +153,28 @@ const Home = props => (
     <Grid data={props.data} language={props.language} gridType="COMERCIAL"/>
   
     <LeftraruStar/>
-    <AllWork>
-      <H3>
-        <LinkTo to="/graphics">{translations.home.link[props.language]}</LinkTo>
-      </H3>
-    </AllWork>
+
+   
+
+    <Reveal repeat>
+      <Tween from={{ opacity: 0 }} duration={2}>
+        <div>
+          <TitleHolder>
+              {props.language === "es" ? "Juegos de Mesa" : "Board Games"}
+          </TitleHolder>
+          <IntroTextHolder>
+              {props.language === "es" ? props.dataHome.intro_juegos : props.dataHome.intro_games}
+          </IntroTextHolder>
+        </div>
+      </Tween>
+    </Reveal>
+
+    <Grid data={props.data} language={props.language} gridType="GAMES"/>
+    <LeftraruStar/>  
     <AllWork>
       <H3>
         <LinkTo to="/about">{props.language === "es" ? "Conoce nuestros servicios.": "Get to know our services."}
-</LinkTo>
+        </LinkTo>
       </H3>
       <H3>
         <LinkTo to="/services">{props.language === "es" ? "¿Qué es La Fabulosa?": "What is la Fabulosa?"}</LinkTo>

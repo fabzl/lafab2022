@@ -75,7 +75,7 @@ const LinkTo = styled(NavLink)`
   
   }
 
-  @media (max-width: 740px) {
+  @media (max-width: 840px) {
     font-size: 1.6rem;
     margin: auto;
     margin-top: 7vh;
@@ -172,14 +172,7 @@ const smoothScroll = () => {
 
 const ContactIcon = styled.img`
    
-      filter:drop-shadow(
-      0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075),
-      0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075),
-      0 16px 16px hsl(0deg 0% 0% / 0.075)
-      );
-
+     
  
   width: 60px;
   height: 60px;

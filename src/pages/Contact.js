@@ -108,7 +108,7 @@ const Contact = props => (
      </Links>
 
     <Icons>
-    <a href="tel:+56930965485" target="_blank">
+    <a href="tel:+56930965485" target="_blank" rel="noopener noreferrer">
     <Image
      src={WhatsAppIcon}
      alt="whatsapp"

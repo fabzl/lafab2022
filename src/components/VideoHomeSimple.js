@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../styles/globals";
-import Parser from "html-react-parser";
 
 const Section = styled.section`
   height: ${props => (props.contact ? 60 : 100)}vh;

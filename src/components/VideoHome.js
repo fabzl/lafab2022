@@ -58,6 +58,37 @@ const Text = styled.div`
   text-align: center;
   margin: 0 auto;
   color: ${colors.white};
+
+  .headline-container {
+  max-width: 50%;
+  margin: auto
+}
+.headline {
+    display: inline;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #fff;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+.headline--themovement {
+    background-color: black;
+    box-shadow: 8px 1px 0 3px black, -8px 1px 0 3px black;
+    color: pink;
+}
+.headline {
+    line-height: 1.44;
+}
+.desktop-article__hero-main .headline {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
 `;
 
 const H1 = styled.h1`
@@ -115,9 +146,12 @@ export default props => {
       </VideoContainer>
 
       <Text>
-        <H1>{Parser(props.title)}</H1>
+
+        <div class="headline-container"><h1 class="headline headline--themovement headline--large">{Parser(props.title)}</h1></div>
         <Vcenter><VLine></VLine></Vcenter>
       </Text>
     </Section>
   );
 };
+
+

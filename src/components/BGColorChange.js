@@ -14,15 +14,6 @@ const ContainerColor = styled.div`
   transition: all 1500ms ease;
 `;
 
-const AnotherColor = styled.div`
-  
-  background:#FF0;
-  position: fixed;
-  width: 50%;
-  height: 100%;
-  z-index: -9;
-
-`;
 
 
 const colorArray = ["#73C8A9","#9A151A","#57ACCA", "#BD5532", "#373B44", "#631814"];
@@ -70,7 +61,6 @@ componentWillUnmount() {
 
     return (
           <ContainerColor style={stylesObj} className="container">
-              {/* <AnotherColor></AnotherColor> */}
           </ContainerColor >    
     )
   }

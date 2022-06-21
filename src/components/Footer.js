@@ -131,24 +131,6 @@ const Links = styled.div`
   }
 `;
 
-const LinkTo = styled.a`
-  font-weight: 600;
-  color: ${colors.white};
-  text-decoration: none;
-  padding-right: 1rem;
-  font-size: 0.9rem;
-  letter-spacing: 130%;
-  transition: 1s all;
-  &:hover {
-    color: ${colors.violet};
-  }
-
-  @media (max-width: 740px) {
-    width: 100%;
-    display: block;
-    margin-bottom: 1.4rem;
-  }
-`;
 
 const ToTop = styled.a`
   color: ${colors.white};
