@@ -215,7 +215,7 @@ const About = props => {
 
 
   const {
-    about_image_big,
+//    about_image_big,
     about_image_small_1,
     about_image_small_2,
     about_image_small_3,
@@ -224,13 +224,13 @@ const About = props => {
     about_us,
     //premios,
     //awards,
-    descripcion,
-    description,
+ //   descripcion,
+ //   description,
     historia,
     history,
     about_image_history,
     about_history_small_1,
-    about_image_history_2
+ //   about_image_history_2
 
 
 

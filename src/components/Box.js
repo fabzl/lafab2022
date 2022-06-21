@@ -55,15 +55,15 @@ const TextHolder = styled.div`
 `;
 
 
-const Parallelogram = styled.div` 
-  width: 150px;
-  height: 100px;
-  transform: skew(20deg);
-  background: black;
-  &:before {
-    content: 'develoment'
-  }
-`;
+// const Parallelogram = styled.div` 
+//   width: 150px;
+//   height: 100px;
+//   transform: skew(20deg);
+//   background: black;
+//   &:before {
+//     content: 'develoment'
+//   }
+// `;
 
 
 const ImageHolder = styled.img`

@@ -65,16 +65,6 @@ const Section = styled.div`
   background-color:${colors.black};
 `;
 
-const Play = styled.div`
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
-  }
-  & i {
-    width: 0.5em;
-  }
-`;
-
 const Container = styled.div`
   max-width: 60rem;
   margin: 0 auto;
@@ -236,11 +226,11 @@ const ShowWork = props => {
     avatar_picture: { url},
     ano_del_proyecto,
     awards,
-    boxtype,
+   // boxtype,
     categoria,
-    category,
+  //  category,
     category_display,
-    cliente,
+  //  cliente,
     country,
     descripcion_del_proyecto,
     descripcion_del_proyecto_2,

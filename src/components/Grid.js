@@ -19,7 +19,7 @@ class Grid extends Component {
     return data.map((item, key) => {
       // Si no existe acf implementado
       
-      if (!item.acf.category.toString() == type.toString())return null;
+      if (!item.acf.category.toString() === type.toString())return null;
       if (!item.acf.avatar_picture) return null;
      
     //  console.log(item.acf.project_name, type.toString(), item.acf.category.toString() == type.toString())
@@ -36,11 +36,11 @@ class Grid extends Component {
         boxtype,
         pais,
         country,
-        countryname,
-        link,
+       // countryname,
+       // link,
 
       } = item.acf;
-     if (item.acf.category.toString() == type.toString()) 
+     if (item.acf.category.toString() === type.toString()) 
       return (
         <Box
         
@@ -56,15 +56,15 @@ class Grid extends Component {
           videoUrl={item.acf.vimeourl}
           link={item.slug}
         />
-      );
-    });
+      )
+    })
   };
 
   render() {
     const Wrap = styled.div`
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr )); 
         justify-content: space-between;
-       display:grid;
+        display:grid;
 
     `;
 

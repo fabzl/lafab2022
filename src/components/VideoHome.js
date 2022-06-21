@@ -83,53 +83,7 @@ const Text = styled.div`
 .desktop-article__hero-main .headline {
     position: relative;
     z-index: 2;
-}
-
-
-
-
-
-`;
-
-const H1 = styled.h1`
-  display: inline-flex;
-  z-index: 300;
-  color: ${colors.white};
-  letter-spacing: 130%;
-  padding:0 20%;
-  font-size: 2.5vmax;
-  font-weight: 600;
-  justify-content: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-
-  &::after,
-  &::before {
-    content: "";
-    display: none;
-    /* display: block; */
-    width: 0;
-    border-top: 3px solid ${colors.white};
-    transition: width 0.6s 0.2s, left 0.6s 0.2s, right 0.6s 0.2s;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    position: absolute;
-    top: 50%;
-    margin-top: -1.5rem;
-    transform: translateZ(0);
-    width: 7rem;
-    @media (min-width: 520px) {
-    }
-  }
-
-  &::before {
-    left: -7rem;
-  }
-
-  &::after {
-    right: -7rem;
-  }
-`;
+}`;
 
 export default props => {
   let videoOverride = props.video;

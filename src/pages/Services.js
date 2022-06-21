@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 //import VideoHome from "../components/VideoHome";
-import React, { useState } from 'react';
+import React from 'react';
 import { Waypoint } from 'react-waypoint';
 import styled from "styled-components";
 import LeftraruStar from "../components/LeftraruStar";
 import { colors } from "../styles/globals";
 
-import translations from "../translations";
+//import translations from "../translations";
 
 
 import IconStorytelling from "../img/storytelling.svg";

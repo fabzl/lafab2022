@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { playVideo } from "../redux/actions";
 import { colors } from "../styles/globals";
-import CloseBtn from "../icons/close-times.svg";
+//import CloseBtn from "../icons/close-times.svg";
 
 
 const Wrap = styled.div`

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 import translations from "../translations";
 //import logo from "../img/logo_main_white.svg";

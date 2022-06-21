@@ -1,12 +1,13 @@
+
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 //import Logo from "../img/logo_white_simple.svg";
-import Logo from "../img/logo_white_anim.svg";
+//import Logo from "../img/logo_white_anim.svg";
 import Garden from "../img/image-garden-dark.jpg";
 import { Waypoint } from 'react-waypoint';
 import translations from "../translations";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { colors } from "../styles/globals";
 
