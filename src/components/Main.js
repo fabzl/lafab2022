@@ -108,8 +108,8 @@ const Hashtag = styled.h1`
   letter-spacing: 0.8px;
   position:absolute;
   font-size: 0.7rem;
-  left:20ox;
-  top:0;
+  left:20px;
+  top:50px;
   margin:0;
   transform: rotate(90deg);
   transform-origin: 0% 80%; 
@@ -484,7 +484,7 @@ class Main extends React.Component {
 	  onPositionChange={this._handlePositionChange}
 	>
 		  <LogoWhite className={`${this.state.activeElement}`}>
-				  <svg version="1.1" id="Layer_1" xlink="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1190.76 538.3"  xmlSpace="preserve" width="1190.760009765625" height="538.2999877929688">
+				  <svg version="1.1" id="Layer_1" xlink="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1190.76 538.3"  xmlSpace="preserve" width="100vw" height="75vh">
 					<g className="logo-group">
 			<path className={`${"st0 svg-elem-1 "+this.state.activeElement.toString()}`} d="M265.66,414.48c0-11.41-10.37-12.66-10.37-12.66c0,5.53-4.11,14.51-8.65,18.99
 			  c-4.64,4.57-8.54,12.83-39.76,12.83c-33.23,0-46.34-12.79-86.45-38.73c-19.73-12.76-35.83-19.6-49.91-21.45
