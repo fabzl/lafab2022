@@ -107,8 +107,8 @@ const Hashtag = styled.h1`
   text-transform: uppercase;
   letter-spacing: 0.8px;
   position:absolute;
-  font-size: 1rem;
-  left:0;
+  font-size: 0.7rem;
+  left:20ox;
   top:0;
   margin:0;
   transform: rotate(90deg);

@@ -15,8 +15,17 @@ const Wrap = styled.div`
   position: relative;
   display: inline-grid;
   align-items:stretch;
+
+&.COMERCIAL {
+  grid-column: auto / span 2 ;
+
+}
+
+&.GAMES {
+  max-width: 200px;
+}
   
-&.normal {
+&.BRANDING {
   grid-column: auto / span 1 ;
   padding: 0;
   width:100%;
@@ -24,11 +33,15 @@ const Wrap = styled.div`
    
   }
 }
-&.wide {
+&.STORYTELLING {
   grid-column: auto / span 2 ;
   
 }
 
+&.INTERACTIVE {
+  grid-column: auto / span 2 ;
+  
+}
 
   &:hover {
     > a > div {
@@ -75,7 +88,7 @@ const ImageHolder = styled.img`
   //background: url(${props => props.src}) no-repeat center;
   background-size:     cover;                     ------ */
   background-repeat:   no-repeat;
-  background-position: center center;              /* optional, center the image */
+  background-position: center center;            
     .wide {
       transform: rotation(180deg);
     } 

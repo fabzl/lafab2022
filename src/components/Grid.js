@@ -44,7 +44,7 @@ class Grid extends Component {
       return (
         <Box
         
-          boxtype={boxtype}
+          boxtype={gridType}
           key={item.id}
           pais={pais}
           country={country}
