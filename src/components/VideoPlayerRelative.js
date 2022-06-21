@@ -4,7 +4,6 @@ import ReactPlayer from 'react-player'
 
 const VideoContainer = styled.div`
   
-  width: 80vw;
   position: relative;
   display: flex;
   justify-content: center;
