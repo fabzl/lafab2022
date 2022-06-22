@@ -1,6 +1,19 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { colors } from "../styles/globals";
+import WhatsAppIcon from "../icons/whatsapp-icon.svg";
+import InstagramIcon from "../icons/instagram-icon.svg";
+import TwitterIcon from "../icons/twitter-icon.svg";
+import LinkedInIcon from "../icons/linkedin-icon.svg";
+import YoutubeIcon from "../icons/youtube-icon.svg";
+import FacebookIcon from "../icons/facebook-icon.svg";
+
+
+const Image = styled.img` 
+
+  padding: 5px;
+  
+`;
 
 class Social extends Component {
   state = {
@@ -24,7 +37,7 @@ class Social extends Component {
 
       @media (max-width: 740px) {
         display: ${this.isInTheHeader() ? "flex" : "none"};
-        width: 40%;
+      
       }
     `;
 
@@ -40,27 +53,66 @@ class Social extends Component {
 
     return (
       <Social>
-        <SocialLink target="_blank" href="https://web.facebook.com/muchamedia">
-          <i className="fab fa-facebook-f fa-2x" />
-        </SocialLink>
 
-        <SocialLink target="_blank" href="https://www.instagram.com/muchamedia">
-          <i className="fab fa-instagram fa-2x" />
-        </SocialLink>
+        <SocialLink>
 
-        <SocialLink
-          target="_blank"
-          href="https://www.linkedin.com/company/mucha-media/"
-        >
-          <i className="fab fa-linkedin-in fa-2x" />
-        </SocialLink>
 
-        <SocialLink
-          target="_blank"
-          href="https://vimeo.com/channels/muchamedia"
-        >
-          <i className="fab fa-vimeo-v fa-2x" />
-        </SocialLink>
+        <a href="tel:+56930965485" target="_blank" rel="noopener noreferrer">
+            
+            <Image
+              src={WhatsAppIcon}
+              alt="whatsapp"
+              width="28"
+              height="28"
+            />
+          </a>
+          <a href="https://www.instagram.com/_la_fabulosa_" target="_blank" rel="noopener noreferrer"> 
+            <Image
+              src={InstagramIcon}
+              alt="instagram"
+              width="28"
+              height="29"
+            />
+          </a>
+          <a href="https://twitter.com/holalafabulosa1" target="_blank" rel="noopener noreferrer">
+            <Image
+              src={TwitterIcon}
+              alt="twitter"
+              width="28"
+              height="28"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/la-fabulosa-republica-de-la-montana/" target="_blank" rel="noopener noreferrer"> 
+            <Image
+              src={LinkedInIcon}
+              alt="linkedin"
+              width="28"
+              height="32"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/c/fabianandrade"
+            target="_blank" rel="noopener noreferrer"
+          >
+            <Image
+              src={YoutubeIcon}
+              alt="youtube"
+              width="28"
+              height="29"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/la.fabulosa.republica.de.la.montana"
+            target="_blank" rel="noopener noreferrer"
+          >
+            <Image
+              src={FacebookIcon}
+              alt="facebook"
+              width="28"
+              height="32"
+            />
+          </a>
+          </SocialLink>
       </Social>
     );
   }
