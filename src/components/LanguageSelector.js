@@ -17,9 +17,9 @@ const H2 = styled.div`
   margin-right: 5rem;
   transition: 0.7s all;
   border-radius: 100%;
-  @media (max-width: 740px) {
+  @media (max-width: 840px) {
     position: fixed;
-    top: 2rem;
+    top: 8rem;
     left: 2rem;
   }
   &:hover {

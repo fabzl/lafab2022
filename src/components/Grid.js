@@ -65,6 +65,7 @@ class Grid extends Component {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr )); 
         justify-content: space-between;
         display:grid;
+        margin: 0 auto;
 
     `;
 

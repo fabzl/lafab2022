@@ -29,6 +29,30 @@ const Nav = styled.nav`
 
 
 
+const ContactIcon = styled.img`
+   
+     
+ 
+  width: 60px;
+  height: 60px;
+  &:hover {
+    transform:scale(1.2);
+  }
+  transition: all 0.3s;
+  &:click {
+    transform:scale(1.2);
+  }
+
+
+  @media (max-width: 840px) {
+    width: 40px;
+    height: 40px;
+  }
+
+
+`;
+
+
 const LinkToFixed = styled(NavLink)`
   position: fixed;
   bottom:60px;
@@ -44,6 +68,12 @@ const LinkToFixed = styled(NavLink)`
   &.hide {
     display: none;
   }
+
+  
+  @media (max-width: 840px) {
+    right:45px;
+  }
+
    
 `;
 
@@ -117,7 +147,7 @@ const LinkTo = styled(NavLink)`
   margin-left: 2rem;
   margin-top: 1.5rem;
   width: 20vmax;
-  @media (min-width: 740px) {
+  @media (min-width: 840px) {
     margin-top: 2.5rem;
     width: 30vmax;
   }
@@ -170,27 +200,12 @@ const smoothScroll = () => {
 };
 
 
-const ContactIcon = styled.img`
-   
-     
- 
-  width: 60px;
-  height: 60px;
-  &:hover {
-    transform:scale(1.2);
-  }
-  transition: all 0.3s;
-  &:click {
-    transform:scale(1.2);
-  }
-`;
-
 const BackToTop = styled.div`
   flex: 1;
   text-align: right;
   display: none;
 
-  @media (max-width: 740px) {
+  @media (max-width: 840px) {
     display: none;
     &.active {
       display: flex;
@@ -204,24 +219,26 @@ const BackToTop = styled.div`
 const BurgerLink = styled.a`
   z-index: 50000;
   color: ${colors.white};
-  margin: 0 2rem;
+  margin: 2rem;
+  
 
-  @media (min-width: 740px) {
+  @media (min-width: 840px) {
     display: none;
   }
 
   rect {
     transition: 0.5s all;
+   
   }
   &.open {
     rect:nth-child(1) {
-      transform: translate(1rem, 0) rotate(45deg);
+      transform: translate(11px,0px) rotate(45deg);
     }
     rect:nth-child(2) {
       opacity: 0;
     }
     rect:nth-child(3) {
-      transform: translate(-1.3rem, 1rem) rotate(-45deg);
+      transform:translate(-12px,11px) rotate(-45deg);
     }
   }
 `;
@@ -235,7 +252,7 @@ const NavContainer = styled.div`
   display: flex;
   padding-top: 10px;
 
-  @media (max-width: 740px) {
+  @media (max-width: 840px) {
     display: none;
     justify-content: flex-end;
 
@@ -343,7 +360,7 @@ class Header extends React.Component {
           >
             <ToTop onClick={() => smoothScroll()}>
               <span>
-                <i className="fas fa-angle-up fa-4x" />
+                <i className="fas fa-angle-up fa-2x" />
               </span>
                {translations.footer.top[this.props.language]}
             </ToTop>

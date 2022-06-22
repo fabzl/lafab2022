@@ -8,8 +8,44 @@ import Garden from "../img/image-garden-dark.jpg";
 import { Waypoint } from 'react-waypoint';
 import translations from "../translations";
 import { NavLink } from "react-router-dom";
-
 import { colors } from "../styles/globals";
+
+import IconStorytelling from "../img/storytelling.svg";
+import IconContent from "../img/content.svg";
+import IconInteractive from "../img/interactive.svg";
+import IconBrand from "../img/brands.svg";
+import IconStrategy from "../img/strategy.svg";
+import IconMarketing from "../img/marketing.svg";
+
+
+const InTouch = styled.div`
+  height: 20vh;
+  width: 100%;
+  background-color: ${colors.black};
+  color: #000000;
+  justify-content: space-around;
+  display: flex;
+  overflow:hidden;
+  position:relative;
+  align-items: center;
+}`;
+
+
+const IconContainer = styled.img`
+width: 10vw;
+height: 10vw;
+transform-origin: center;
+min-width: 50px;
+min-height: 50px;
+max-width: 15vh;
+max-height: 15vh;
+transition: all .7s;
+padding: 10px;
+justify-content: space-around;
+
+}`;
+
+
 
 
 const LinkTo = styled(NavLink)`
@@ -57,23 +93,23 @@ const LinkTo = styled(NavLink)`
   
 `;
 
-const InTouch = styled.div`
-  padding: 0;  
-  height: 20vh;
-  width: 100%;
-  background-color: ${colors.black};
-  color: #000000;
-  h2 {
-
-	margin:0;
-  }
-}`;
-
-
 const TransmediaText = styled.h2`
 
   text-transform: uppercase;
   font-size: 2.7rem;
+
+  @media (max-width: 840px) {
+     
+	font-size: 1.7rem;
+ }
+ @media (max-width: 500px) {
+     
+	font-size: 1rem;
+ }
+
+
+
+
   margin:0 auto;
   letter-spacing: 170%;
   animation: fadeIn 4s ease-out;
@@ -600,11 +636,18 @@ class Main extends React.Component {
 		<TransmediaText>transmedia productions</TransmediaText>
 		<Hashtag>LA FABULOSA REPÚBLICA DE LA MONTAÑA</Hashtag>
 	</MainBlock>
-	<InTouch><h2>         
-	   <LinkTo onClick={this.checkMobileNav} to="/contact">
-			{translations.main.contact[language]}
+	<InTouch>
+	
+			  <LinkTo onClick={this.checkMobileNav} to="/contact">
+
+				<IconContainer src={IconStorytelling} alt="Storytelling Icon"/>
+				<IconContainer src={IconContent} alt="Content Icon"/>
+				<IconContainer src={IconInteractive} alt="Interactive Icon"/>
+				<IconContainer src={IconBrand} alt="Brand Icon"/>
+				<IconContainer src={IconStrategy} alt="Strategy Icon"/>
+				<IconContainer src={IconMarketing} alt="Marketing Icon"/>
 		  </LinkTo>
- 	</h2></InTouch>  
+ 	 </InTouch>  
 	</div>
 	 )
 	}

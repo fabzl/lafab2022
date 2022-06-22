@@ -6,9 +6,6 @@ import styled from "styled-components";
 import LeftraruStar from "../components/LeftraruStar";
 import { colors } from "../styles/globals";
 
-//import translations from "../translations";
-
-
 import IconStorytelling from "../img/storytelling.svg";
 import IconContent from "../img/content.svg";
 import IconInteractive from "../img/interactive.svg";
@@ -32,11 +29,8 @@ const IntroTextHolder = styled.p`
   padding: 0 25% 10% 25%;
 
   &:before {
-
   }
-
 `;
-
 
 
 const IconContainer = styled.img`
@@ -125,19 +119,19 @@ const smoothScroll = () => {
 
 const  _handleWaypointEnterMain = e => {
   smoothScroll()
-  console.log ("_handleWaypointEnterMain", e);
+  //console.log ("_handleWaypointEnterMain", e);
 }
 
 const  _handleWaypointEnter = e => {
-    console.log ("_handleWaypointEnter", e);
+    //console.log ("_handleWaypointEnter", e);
   }
 
   const  _handleWaypointLeave = e => {
-    console.log ("_handleWaypointLeave", e);
+    //console.log ("_handleWaypointLeave", e);
 
   }
   const _handlePositionChange = e => {
-    console.log ("_handlePositionChange", e);
+    ///console.log ("_handlePositionChange", e);
   }
 
 const Services = props => (

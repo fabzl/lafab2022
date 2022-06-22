@@ -22,7 +22,14 @@ const Wrap = styled.div`
 }
 
 &.GAMES {
-  max-width: 200px;
+
+  grid-column: fr fr;
+
+  @media (min-width: 840px) {
+
+    max-width:33vw;
+  }
+
 }
   
 &.BRANDING {

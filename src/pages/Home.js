@@ -12,6 +12,11 @@ import BGColorChange from "../components/BGColorChange";
 import { Reveal, Tween } from 'react-gsap';
 
 
+
+
+
+
+
 const TitleHolder = styled.h2`
   color: ${colors.white};
   text-align: center;
@@ -81,6 +86,8 @@ const Home = props => (
           : props.dataHome.intro_text_english
       }
     />
+
+
     <LeftraruStar/>       
   
     <Reveal repeat>

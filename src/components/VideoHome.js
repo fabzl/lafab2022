@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { colors } from "../styles/globals";
 import Parser from "html-react-parser";
 
+
+
+
 const Section = styled.section`
   height: ${props => (props.contact ? 80 : 100)}vh;
   position: relative;
@@ -65,7 +68,15 @@ const Text = styled.div`
 }
 .headline {
     display: inline;
-    font-size: 3rem;
+    font-size: 2rem;
+    @media (max-width: 940px) {
+      font-size: 1.5rem;
+
+    }
+    @media (min-width: 1340px) {
+      font-size: 3rem;
+
+    }
     font-weight: 700;
     line-height: 1.5;
     color: #fff;
