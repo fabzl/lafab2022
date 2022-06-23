@@ -32,6 +32,15 @@ const Close = styled.img`
     padding-bottom: 2vw;
     transform-origin: center;
   }
+
+  @media (max-width: 840px) {
+    left:45px;
+    width: 40px;
+    height: 40px;
+    bottom:80px;
+  }
+
+
 `;
 
 
@@ -42,16 +51,15 @@ const Wrap = styled.div`
   //background: url(${props => props.src}) no-repeat center;
   background-color:${colors.black};
   background-size: cover;
- 
   font-size: 1.6rem;
 `;
 
 const HeroImg = styled.img`
-width: 100%;
-display:block;
-margin: 0;
-max-height: 80vh;
-object-fit: contain;
+  width: 100%;
+  display:block;
+  margin: 0;
+  max-height: 80vh;
+  object-fit: contain;
 `;
 
 
@@ -125,26 +133,6 @@ const Center = styled.div`
   flex-direction: column;
   width:100vw;
 `;
-
-
-
-// const smoothScroll = () => {
-
-//   console.log("smoot")
-//   const scrollY = window.scrollY;
-//   if (scrollY > 0) {
-//     setTimeout(() => {
-//       window.scrollTo(0, scrollY - 30 >= 0 ? window.scrollY - 30 : 0);
-//       smoothScroll();
-//     }, 10);
-//   }
-// };
-
-// const  _handleWaypointEnterMain = e => {
-//   smoothScroll()
-//   //console.log ("_handleWaypointEnterMain", e);
-// };
-
 
 
 
