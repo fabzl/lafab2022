@@ -72,6 +72,7 @@ const LinkToFixed = styled(NavLink)`
   
   @media (max-width: 840px) {
     right:45px;
+    bottom:72px;
   }
 
    

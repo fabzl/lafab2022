@@ -22,19 +22,30 @@ const TitleHolder = styled.h2`
   text-align: center;
   font-size: 2rem;
   margin-bottom: 3px;
+  
+  @media (max-width: 720px) {
+    font-size: 1.5rem;
+    padding: 0 15% 10% 15%;
+  }
 `;
 
 
 const IntroTextHolder = styled.p`
   color: ${colors.white};
   text-align:center;
-  font-size:2rem;
+  font-size:1.8rem;
   margin-bottom:3px;
   padding: 0 25% 10% 25%;
 
   &:before {
 
   }
+
+  @media (max-width: 720px) {
+    font-size: 1.2rem;
+    padding: 0 15% 10% 15%;
+  }
+
 
 `;
 

@@ -29,6 +29,12 @@ const Mailto = styled.a`
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
+    
+  @media (max-width: 840px) {
+    font-size: 0.7rem;
+  }
+
+
   `;
 
 

@@ -17,6 +17,8 @@ import IconBrand from "../img/brands.svg";
 import IconStrategy from "../img/strategy.svg";
 import IconMarketing from "../img/marketing.svg";
 
+import Canvas from "./Canvas"
+
 
 const InTouch = styled.div`
   height: 20vh;
@@ -513,7 +515,8 @@ class Main extends React.Component {
 	return (
 	<div>
 	<MainBlock>
-		
+
+  <Canvas></Canvas>
 	<Waypoint
 	  onEnter={this._handleWaypointEnter}
 	  onLeave={this._handleWaypointLeave}

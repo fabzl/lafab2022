@@ -7,7 +7,6 @@ import translations from "../translations";
 import { Waypoint } from 'react-waypoint';
 import { colors } from "../styles/globals";
 
-
 const smoothScroll = () => {
   const scrollY = window.scrollY;
   if (scrollY > 0) {
@@ -43,6 +42,11 @@ const Acerca = styled.div`
   padding: 10% 20%;
   margin: 0 auto;
   background: ${colors.gray};
+
+  @media (max-width: 840px) {
+    padding: 5% 10%;
+  }
+
 `;
 
 const H2 = styled.h2`
@@ -54,12 +58,17 @@ const H2 = styled.h2`
   text-align: center;
   font-size: 22px;
   padding: 0 10%;
+
   @media (min-width: 520px) {
     font-size: 30px;
     padding: 0;
   }
   @media (min-width: 720px) {
     font-size: 32px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 1rem;
   }
 
   &.dark {
@@ -110,6 +119,11 @@ const Images = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 430px;
+
+  @media (max-width: 840px) {
+    grid-auto-rows: 200px;
+  }
+
 `;
 
 const Image = styled.div`
@@ -117,10 +131,14 @@ const Image = styled.div`
   overflow: hidden;
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
+
+
+
  img {
   &.wide {
     width: 100vw;
   }
+
 }
 `;
 

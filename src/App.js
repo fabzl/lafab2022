@@ -28,6 +28,7 @@ import { loaderLoading, contentLoaded, loaderVisible } from "./redux/actions";
 const Wrap = styled.div`
   display: flex;
   min-height: 100vh;
+  max-width: 100vw;
   flex-direction: column;
   height: 100%;
   top: 0;

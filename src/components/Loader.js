@@ -43,8 +43,9 @@ const Loader = props => {
   `;
   return (
     <LoaderContent>
-      <img src={logo} alt="loaderContent" />
-    </LoaderContent>
+{/*       <img src={logo} alt="loaderContent" />
+ */}   
+  </LoaderContent>
   );
 };
 

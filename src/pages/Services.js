@@ -38,7 +38,14 @@ margin: 0 auto;
 max-width: 150px;
 max-height: 150px;
 transition: all .7s;
+align-self:center;
 margin-top:50px;
+
+@media (max-width: 840px) {
+  max-width: none;
+  max-height: none;
+}
+
 &.out {
   transform: rotate(20deg) scale(0.5);
   opacity:0;
@@ -67,7 +74,14 @@ const ServiceHeader = styled.div`
 h2 {
       text-align:center;
       margin: 0;
-      padding: 100px;
+      padding: 20vw;
+  
+      @media (max-width: 720px) {
+    
+        font-size:1.6 rem;
+  
+      }
+    
   }
     flex-direction: row;
 `;
@@ -199,8 +213,8 @@ const Services = props => (
           <li>{props.language === "es" ? "Diseño Web":"Web Design"}</li>
           <li>{props.language === "es" ? "Programación":"Coding"}</li>
           <li>{props.language === "es" ? "Aplicaciones Móviles":"Apps"}</li>
-          <li>{props.language === "es" ? "Videojuegos":"Videogames"}</li>
-          <li>{props.language === "es" ? "Juegos de Mesa":"Boardgames"}</li>
+          <li>{props.language === "es" ? "Videojuegos 3D":"Videogames 3D"}</li>
+          <li>{props.language === "es" ? "VR / AR / NFT":"VR / AR / NFT"}</li>
         </ul>
         </div>
 

@@ -66,7 +66,7 @@ class Grid extends Component {
         justify-content: space-between;
         display:grid;
         margin: 0 auto;
-
+        padding: 0;
     `;
 
     return <Wrap>

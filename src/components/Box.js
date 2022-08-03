@@ -15,6 +15,7 @@ const Wrap = styled.div`
   position: relative;
   display: inline-grid;
   align-items:stretch;
+  margin: 0 auto;
 
 &.COMERCIAL {
   grid-column: auto / span 2 ;
