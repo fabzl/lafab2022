@@ -17,7 +17,7 @@ import IconBrand from "../img/brands.svg";
 import IconStrategy from "../img/strategy.svg";
 import IconMarketing from "../img/marketing.svg";
 
-import Canvas from "./Canvas"
+import CanvasThree from "./CanvasThree"
 
 
 const InTouch = styled.div`
@@ -483,7 +483,7 @@ background-position: center;
 color: #ffffff;
 text-align: center;
 padding: 2rem 0;
-min-height: 80vh;
+min-height: 100vh;
 `;
 
 class Main extends React.Component {
@@ -516,7 +516,7 @@ class Main extends React.Component {
 	<div>
 	<MainBlock>
 
-  <Canvas></Canvas>
+  <CanvasThree></CanvasThree>
 	<Waypoint
 	  onEnter={this._handleWaypointEnter}
 	  onLeave={this._handleWaypointLeave}
