@@ -5,7 +5,6 @@ import { Waypoint } from 'react-waypoint';
 import styled from "styled-components";
 import LeftraruStar from "../components/LeftraruStar";
 import { colors } from "../styles/globals";
-
 import IconStorytelling from "../img/storytelling.svg";
 import IconContent from "../img/content.svg";
 import IconInteractive from "../img/interactive.svg";
@@ -282,7 +281,7 @@ const Services = props => (
          {props.language === "es" ? "Solicita tu consultoría gratis" : "Ask for your free consultation"}
     </TitleHolder>
     <IntroTextHolder>
-         {props.language === "es" ? "Nos gusta ayudar, hacemos proyectos, videos, historias de marca y contenido digital para empresas que necesitan involucrar a clientes y empleados, y para personas que quieren dejar un legado. Pide tu primera reunion gratis." : "We like to help, we make projectsks, videos, brand stories, and digital content for companies that need to engage customers and employees, and for individuals who want to leave a legacy. Ask for your free first meeting."}
+         {props.language === "es" ? "Nos gusta ayudar, hacemos proyectos, videos, historias de marca y contenido digital para empresas que necesitan involucrar a clientes y empleados, y para personas que quieren dejar un legado. Pide tu primera reunion gratis." : "We like to help, we make projects, videos, brand stories, and digital content for companies that need to engage customers and employees, and for individuals who want to leave a legacy. Ask for your free first meeting."}
     </IntroTextHolder>
 
   </div>

@@ -132,8 +132,6 @@ const Image = styled.div`
   background: url(${props => props.src}) no-repeat center;
   background-size: cover;
 
-
-
  img {
   &.wide {
     width: 100vw;
@@ -215,7 +213,7 @@ const Item = ({ item, projectName }) =>
       <Prize> 
          <div>
             <ProjectNameText>{projectName}</ProjectNameText> 
-            <PrizeNameText>{item.split("/").join('\n')}</PrizeNameText>
+            <PrizeNameText>{item.split("/").join('\n').reverse()}</PrizeNameText>
          </div> 
          <Laurel src={laurel}/> 
     </Prize>;
