@@ -1,30 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-
-// Sections
-import Home from "./pages/Home";
-import Work from "./pages/Work";
-import ShowWork from "./pages/ShowWork";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Services from "./pages/Services";
-
 
 // Components
 import Header from "./components/Header";
 import Loader from "./components/Loader";
-// import VideoPlayer from './components/VideoPlayer';
 import Modal from "./components/Modal";
 import Fade from "./components/Fade";
 import Footer from "./components/Footer";
 
-//import { colors } from "./styles/globals";
-import { fetchData } from "./redux/actions";
-import { loaderLoading, contentLoaded, loaderVisible } from "./redux/actions";
+// Redux Actions
+import { fetchData, loaderLoading, contentLoaded, loaderVisible } from "./redux/actions";
 
-
+// Styled Components
 const Wrap = styled.div`
   display: flex;
   min-height: 100vh;
@@ -34,13 +23,19 @@ const Wrap = styled.div`
   top: 0;
 `;
 
+// Lazy loaded Components
+const Home = lazy(() => import('./pages/Home'));
+const Work = lazy(() => import('./pages/Work'));
+const ShowWork = lazy(() => import('./pages/ShowWork'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Services = lazy(() => import('./pages/Services'));
+
 class App extends Component {
   constructor(props) {
     super();
     props.fetchData();
     props.loaderLoading();
-    // window.scrollTo(0, 0);
-    //console.log("constructor")
   }
 
   setToDestroy = props => {
@@ -60,15 +55,17 @@ class App extends Component {
         <Router>
           <div style={{ display: "flex", flex: 1 }}>
             <Header />
-
             <div style={{ flex: 1 }}>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/work" component={Work} />
-              <Route exact path="/work/:link" component={ShowWork} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/contact" component={Contact} />
-              <Route exact path="/services" component={Services} />
-
+              <Suspense fallback={<Loader />}>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/work" component={Work} />
+                  <Route exact path="/work/:link" component={ShowWork} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/contact" component={Contact} />
+                  <Route exact path="/services" component={Services} />
+                </Switch>
+              </Suspense>
             </div>
           </div>
         </Router>
@@ -78,17 +75,15 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    showVideo: state.video.showVideo,
-    scrollY: state.video.scrollY,
-    pages: state.data.pages,
-    posts: state.data.posts,
-    loading: state.data.loading,
-    loaded: state.loader.loaded,
-    visible: state.loader.visible
-  };
-};
+const mapStateToProps = state => ({
+  showVideo: state.video.showVideo,
+  scrollY: state.video.scrollY,
+  pages: state.data.pages,
+  posts: state.data.posts,
+  loading: state.data.loading,
+  loaded: state.loader.loaded,
+  visible: state.loader.visible
+});
 
 export default connect(mapStateToProps, {
   fetchData,

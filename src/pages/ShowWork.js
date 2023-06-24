@@ -10,7 +10,6 @@ import ProjectImage from "../components/ProjectImage";
 import laurel from "../img/laurels_black.svg";
 import { Waypoint } from 'react-waypoint';
 import { colors } from "../styles/globals";
-import ReactHtmlParser from 'react-html-parser'; 
 import VideoPlayerRelative from "../components/VideoPlayerRelative";
 
 
@@ -296,13 +295,13 @@ const ShowWork = props => {
      <Container>
 
      <DescriptionText>
-     { ReactHtmlParser (
+     { 
      ( language === "es" ) ? 
      
       (descripcion_del_proyecto !== "" ) ? descripcion_del_proyecto : ""
      : 
       (project_description !== "" ) ?   project_description : ""
-      ) }
+       }
       </DescriptionText>
 
       
@@ -314,13 +313,13 @@ const ShowWork = props => {
 
 {/* desc2  */}
       <DescriptionText>
-     { ReactHtmlParser (
+     { 
      ( language === "es" ) ? 
      
       (descripcion_del_proyecto_2 !== "" ) ? descripcion_del_proyecto_2 : ""
      : 
       (project_description_2 !== "" ) ?   project_description_2 : ""
-      ) }
+       }
       </DescriptionText>
 
     { (items[key].acf.picture_two.url !== false )? 
@@ -331,13 +330,13 @@ const ShowWork = props => {
 
     {/* desc3  */}
     <DescriptionText>
-     { ReactHtmlParser (
+     { 
      ( language === "es" ) ? 
      
       (descripcion_del_proyecto_3 !== "" ) ? descripcion_del_proyecto_3 : ""
      : 
       (project_description_3 !== "" ) ?   project_description_3 : ""
-      ) }
+       }
       </DescriptionText>
     
     
@@ -349,13 +348,13 @@ const ShowWork = props => {
 
     {/* desc4  */}
     <DescriptionText>
-     { ReactHtmlParser (
+     {
      ( language === "es" ) ? 
      
       (descripcion_del_proyecto_4 !== "" ) ? descripcion_del_proyecto_4 : ""
      : 
       (project_description_4 !== "" ) ?   project_description_4 : ""
-      ) }
+       }
       </DescriptionText>
 
 
@@ -368,13 +367,13 @@ const ShowWork = props => {
 
     {/* desc5  */}
     <DescriptionText>
-     { ReactHtmlParser (
+     {
      ( language === "es" ) ? 
      
       (descripcion_del_proyecto_5 !== "" ) ? descripcion_del_proyecto_5 : ""
      : 
       (project_description_5 !== "" ) ?   project_description_5 : ""
-      ) }
+       }
       </DescriptionText>
 
       { (items[key].acf.picture_five.url !== false )? 

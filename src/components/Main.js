@@ -636,7 +636,7 @@ class Main extends React.Component {
 
 	  {/* <LogoWhite className="logo" src={Logo} alt="la fabulosa" width="750px" height="600px" /> */}
 	  </Waypoint>
-		<TransmediaText>transmedia productions</TransmediaText>
+		<TransmediaText>Film & transmedia design</TransmediaText>
 		<Hashtag>LA FABULOSA REPÚBLICA DE LA MONTAÑA</Hashtag>
 	</MainBlock>
 	<InTouch>
